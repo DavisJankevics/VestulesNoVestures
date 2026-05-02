@@ -29,7 +29,7 @@ export const MapView = ({ points }: MapViewProps) => {
 
   const filteredPoints = selectedType ? points.filter((point) => point.type === selectedType) : points;
 
-  const API_KEY = import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY;
+  const API_KEY = import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY || 'AIzaSyBGUQPJZZ_uD9VujzZR61icqpUtdLfjc60';
 
   const mapStyleId = import.meta.env.VITE_APP_MAP_STYLE_ID;
   const mapOptions = { ...getMapOptions(mapStyleId) };

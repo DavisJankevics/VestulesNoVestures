@@ -6,19 +6,22 @@ interface LocationPanelProps {
   points: MapPoint[];
   selectedMarker: MapPoint | null;
   onSelectMarker: (point: MapPoint | null) => void;
+  sheetY: number;
+  onSheetYChange: (sheetY: number) => void;
 }
 
 export const LocationPanel = ({
   points,
   selectedMarker,
   onSelectMarker,
+  sheetY,
+  onSheetYChange,
 }: LocationPanelProps) => {
   // Snap points (px from top of screen)
   const SNAP_TOP = 350;
   const SNAP_MID = 600;
   const SNAP_BOTTOM = 750;
 
-  const [sheetY, setSheetY] = useState(SNAP_BOTTOM);
   const [isDragging, setIsDragging] = useState(false);
   const [startY, setStartY] = useState(0);
   const [startSheetY, setStartSheetY] = useState(0);
@@ -42,18 +45,18 @@ export const LocationPanel = ({
       Math.max(SNAP_TOP, startSheetY + delta)
     );
 
-    setSheetY(next);
+    onSheetYChange(next);
   };
 
   const handleTouchEnd = () => {
     setIsDragging(false);
 
-    const points = [SNAP_TOP, SNAP_MID, SNAP_BOTTOM];
-    const closest = points.reduce((prev, curr) =>
+    const snapPoints = [SNAP_TOP, SNAP_MID, SNAP_BOTTOM];
+    const closest = snapPoints.reduce((prev, curr) =>
       Math.abs(curr - sheetY) < Math.abs(prev - sheetY) ? curr : prev
     );
 
-    setSheetY(closest);
+    onSheetYChange(closest);
   };
 
   return (

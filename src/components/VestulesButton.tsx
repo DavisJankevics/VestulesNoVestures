@@ -1,0 +1,49 @@
+import { useState } from 'react';
+import { getLocationTypeStyle } from '../config/locationTypeStyles';
+
+interface VestulesButtonData {
+  name: string;
+  description: string;
+  type: string;
+}
+
+interface VestulesButtonProps {
+  data: VestulesButtonData;
+  onClick?: (data: VestulesButtonData) => void;
+  className?: string;
+  type?: string;
+}
+
+export const VestulesButton = ({
+  data,
+  onClick,
+  className = '',
+  type = 'Fakti',
+}: VestulesButtonProps) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleClick = () => {
+    setIsSelected(!isSelected);
+    onClick?.(data);
+  };
+  const styles = getLocationTypeStyle(type);
+
+  const baseStyles =
+    'w-[220px] h-[36px] inline-flex items-center text-center justify-center gap-3 rounded-full px-4 py-2 font-[Courier_New] text-sm font-semibold transition';
+
+  const variantStyles = {
+    ghost: `bg-white border border-current/15 ${styles.iconColorClass} !${styles.textColorClass}`,
+    solid: `${styles.className}`,
+  } as const;
+
+  const variant = isSelected ? 'ghost' : 'solid';
+
+  return (
+    <button
+      onClick={handleClick}
+      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+    >
+      {data.name}
+    </button>
+  );
+};

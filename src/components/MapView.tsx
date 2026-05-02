@@ -5,8 +5,8 @@ import { getMapOptions, defaultCenter } from '../config/mapConfig';
 import { getMarkerSvgUrl } from '../utils/markerUtils';
 import { LocationPanel } from './LocationPanel';
 import { LocationDetail } from './LocationDetail';
-import { LocationTypeButton } from './LocationTypeButton';
-import { locationTypeStyles } from '../config/locationTypeStyles';
+import { LocationTypeFilter } from './LocationTypeFilter';
+import { VestulesButton } from './VestulesButton';
 
 interface MapViewProps {
   points: MapPoint[];
@@ -19,13 +19,21 @@ const containerStyle = {
 
 export const MapView = ({ points }: MapViewProps) => {
   const [selectedMarker, setSelectedMarker] = useState<MapPoint | null>(null);
+  const [selectedVestules, setSelectedVestules] = useState<{ name: string; description: string; type: string } | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [mapCenter, setMapCenter] = useState(defaultCenter);
   const [mapInstance, setMapInstance] = useState<google.maps.Map | null>(null);
+  const [sheetY, setSheetY] = useState(750);
   // const [isPanelCollapsed, setIsPanelCollapsed] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   // const panelHeightClass = isPanelCollapsed ? 'h-[20vh]' : 'h-[85vh]';
+
+  const vestulesData = {
+    name: 'Vēstules no vēstures',
+    description: 'Vēstules no vēstures ir interpretatīvās navigācijas projekts Āgenskalnā, kas aicina iepazīt pilsētvidi caur stāstiem.',
+    type: 'Fakti',
+  };
 
   const filteredPoints = selectedType ? points.filter((point) => point.type === selectedType) : points;
 
@@ -121,31 +129,43 @@ export const MapView = ({ points }: MapViewProps) => {
               );
             })}
           </GoogleMap>
-          <div className={`absolute w-[160px] space-y-3 ml-4 inset-x-0`}>
-            {Object.keys(locationTypeStyles).map((type) => (
-              <LocationTypeButton
-                key={type}
-                type={type}
-                label={type}
-                variant={selectedType === type ? 'solid' : 'ghost'}
-                onClick={() => handleTypeFilter(type)}
-                className="w-full"
-              />
-            ))}
+          <VestulesButton
+            data={vestulesData}
+            onClick={(data) => {
+              if (selectedVestules) {
+                setSelectedVestules(null);
+              } else {
+                setSelectedVestules(data);
+              }
+            }}
+            className='absolute top-4 left-4 z-30'
+          />
+          <div className='absolute left-0 right-0 bottom-0'>
+            <LocationTypeFilter
+              selectedType={selectedType}
+              onTypeFilter={handleTypeFilter}
+              className="w-[160px] max-w-[180px] ml-4 z-30 fixed"
+              style={{ top: `${sheetY - 150}px` }}
+            />
+            <LocationPanel
+              points={selectedType ? points.filter(p => p.type === selectedType) : points}
+              selectedMarker={selectedMarker}
+              onSelectMarker={setSelectedMarker}
+              sheetY={sheetY}
+              onSheetYChange={setSheetY}
+            />
           </div>
-          <div className={`absolute inset-x-0 bottom-0 h-fit z-30 sm:flex justify-center`}>
-            <div className="w-full h-full flex flex-col items-start gap-3">
-              <LocationPanel
-                points={selectedType ? points.filter((point) => point.type === selectedType) : points}
-                selectedMarker={selectedMarker}
-                onSelectMarker={setSelectedMarker}
-              />
-            </div>
-          </div>
-          {selectedMarker && (
+
+          {(selectedMarker || selectedVestules) && (
             <div className="fixed inset-x-0 top-[10vh] bottom-[10vh] flex justify-center items-center px-4 z-40">
               <div className="w-full max-w-[520px] h-full rounded-[28px] overflow-hidden flex flex-col shadow-[0_24px_40px_rgba(15,23,42,0.16)] bg-transparent">
-                <LocationDetail point={selectedMarker} onBack={() => setSelectedMarker(null)} />
+                <LocationDetail
+                  point={selectedVestules || selectedMarker!}
+                  onBack={() => {
+                    setSelectedMarker(null);
+                    setSelectedVestules(null);
+                  }}
+                />
               </div>
             </div>
           )}

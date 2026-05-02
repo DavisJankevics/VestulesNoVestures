@@ -2,8 +2,16 @@ import type { MapPoint } from '../data/mockDataset';
 import { getLocationTypeStyle } from '../config/locationTypeStyles';
 import XIcon from '../assets/Buttons/x.svg?react';
 
+interface VestulesDetailData {
+  name: string;
+  description: string;
+  type: string;
+}
+
+type LocationDetailData = MapPoint | VestulesDetailData;
+
 interface LocationDetailProps {
-  point: MapPoint;
+  point: LocationDetailData;
   onBack: () => void;
 }
 
@@ -22,9 +30,9 @@ export const LocationDetail = ({ point, onBack }: LocationDetailProps) => {
         </button>
       </div>
 
-      <p className="m-0 font-serif text-[15px] leading-[1.8]">
+      {/* <p className="m-0 font-serif text-[15px] leading-[1.8]">
         {point.shortDescription}
-      </p>
+      </p> */}
 
       {point.description && (
         <p className="m-0 text-[14px] leading-[1.75] opacity-95">{point.description}</p>

@@ -22,10 +22,10 @@ export const MapView = ({ points }: MapViewProps) => {
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [mapCenter, setMapCenter] = useState(defaultCenter);
   const [mapInstance, setMapInstance] = useState<google.maps.Map | null>(null);
-  const [isPanelCollapsed, setIsPanelCollapsed] = useState(true);
+  // const [isPanelCollapsed, setIsPanelCollapsed] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const panelHeightClass = isPanelCollapsed ? 'h-[20vh]' : 'h-[85vh]';
+  // const panelHeightClass = isPanelCollapsed ? 'h-[20vh]' : 'h-[85vh]';
 
   const filteredPoints = selectedType ? points.filter((point) => point.type === selectedType) : points;
 

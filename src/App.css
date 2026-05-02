@@ -1,0 +1,50 @@
+/* Panel smooth transitions */
+.location-panel-enter {
+  animation: slideInBottom 0.3s ease-out;
+}
+
+.location-panel-exit {
+  animation: slideOutBottom 0.3s ease-in;
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutBottom {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Smooth map resizing on breakpoint */
+@media (max-width: 767px) {
+  .gm-style {
+    transition: height 0.3s ease-out;
+  }
+}
+
+/* Ensure proper scrolling in panels */
+.location-panel-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent body scrolling when panel is open on mobile */
+body.panel-open {
+  overflow: hidden;
+  height: 100vh;
+}
+

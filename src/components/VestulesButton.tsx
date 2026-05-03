@@ -29,7 +29,7 @@ export const VestulesButton = ({
   const styles = getLocationTypeStyle(type);
 
   const baseStyles =
-    'w-[220px] h-[36px] inline-flex items-center text-center justify-center gap-3 rounded-full px-4 py-2 font-[Courier_New] text-sm font-semibold transition';
+    'w-fit h-fit inline-flex items-center text-center justify-center gap-3 rounded-full py-1 px-2 font-[Courier_New] text-sm font-semibold transition';
 
   const variantStyles = {
     ghost: `bg-white border border-current/15 ${styles.iconColorClass} !${styles.textColorClass}`,

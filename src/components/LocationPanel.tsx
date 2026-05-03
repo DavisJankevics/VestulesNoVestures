@@ -1,4 +1,4 @@
-import { useState, useRef, type TouchEvent } from 'react';
+import {useEffect, useRef, useState, type TouchEvent as ReactTouchEvent,} from 'react';
 import type { MapPoint } from '../data/mockDataset';
 import { getMarkerSvgUrl } from '../utils/markerUtils';
 
@@ -17,70 +17,104 @@ export const LocationPanel = ({
   sheetY,
   onSheetYChange,
 }: LocationPanelProps) => {
-  // Snap points (px from top of screen)
   const SNAP_TOP = 350;
   const SNAP_MID = 600;
   const SNAP_BOTTOM = 750;
 
-  const [isDragging, setIsDragging] = useState(false);
-  const [startY, setStartY] = useState(0);
-  const [startSheetY, setStartSheetY] = useState(0);
+  const isDraggingRef = useRef(false);
+  const startYRef = useRef(0);
+  const startSheetYRef = useRef(0);
 
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const handleRef = useRef<HTMLDivElement>(null);
+  const [isNotSmScreen, setIsNotSmScreen] = useState(true);
 
-  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
-    setIsDragging(true);
-    setStartY(e.touches[0].clientY);
-    setStartSheetY(sheetY);
+  const handleTouchStart = (e: ReactTouchEvent<HTMLDivElement>) => {
+    isDraggingRef.current = true;
+
+    startYRef.current = e.touches[0].clientY;
+    startSheetYRef.current = sheetY;
   };
 
-  const handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
-    if (!isDragging) return;
+  // Detect if screen is NOT in sm breakpoint (sm is 640px in Tailwind)
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 639px)');
+    setIsNotSmScreen(mediaQuery.matches);
 
-    const delta = e.touches[0].clientY - startY;
+    const handler = (e: MediaQueryListEvent) => setIsNotSmScreen(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
 
+  useEffect(() => {
+    const el = handleRef.current;
+    if (!el) return;
 
-    const next = Math.min(
-      SNAP_BOTTOM,
-      Math.max(SNAP_TOP, startSheetY + delta)
-    );
+    const onMove = (e: globalThis.TouchEvent) => {
+      if (!isDraggingRef.current) return;
 
-    onSheetYChange(next);
-  };
+      e.preventDefault();
 
-  const handleTouchEnd = () => {
-    setIsDragging(false);
+      const touch = e.touches[0];
+      const delta = touch.clientY - startYRef.current;
 
-    const snapPoints = [SNAP_TOP, SNAP_MID, SNAP_BOTTOM];
-    const closest = snapPoints.reduce((prev, curr) =>
-      Math.abs(curr - sheetY) < Math.abs(prev - sheetY) ? curr : prev
-    );
+      const next = Math.min(
+        SNAP_BOTTOM,
+        Math.max(SNAP_TOP, startSheetYRef.current + delta)
+      );
 
-    onSheetYChange(closest);
-  };
+      onSheetYChange(next);
+    };
+
+    const onEnd = () => {
+      if (!isDraggingRef.current) return;
+
+      isDraggingRef.current = false;
+
+      const snapPoints = [SNAP_TOP, SNAP_MID, SNAP_BOTTOM];
+
+      const closest = snapPoints.reduce((prev, curr) =>
+        Math.abs(curr - sheetY) < Math.abs(prev - sheetY) ? curr : prev
+      );
+
+      onSheetYChange(closest);
+    };
+
+    el.addEventListener('touchmove', onMove, { passive: false });
+    el.addEventListener('touchend', onEnd);
+
+    return () => {
+      el.removeEventListener('touchmove', onMove);
+      el.removeEventListener('touchend', onEnd);
+    };
+  }, [sheetY, onSheetYChange]);
+  useEffect(() => {
+    document.body.style.overflow = isDraggingRef.current ? 'hidden' : '';
+  }, [sheetY]);
 
   return (
     <div
-      className="fixed left-0 right-0 bottom-0 max-w-[520px] mx-auto bg-[#F5EDE0] flex flex-col"
-      style={{
+      className="fixed left-0 right-0 bottom-0 max-w-[520px] mx-auto bg-[#F5EDE0] flex flex-col sm:relative sm:max-w-[450px] h-full"
+      style={isNotSmScreen ? {
         height: `calc(100vh - ${sheetY}px)`,
-        transition: isDragging ? 'none' : 'height 0.3s ease',
-      }}
+        transition: isDraggingRef.current ? 'none' : 'height 0.25s ease',
+        touchAction: 'none',
+      } : { touchAction: 'none' }}
     >
-      {/* Drag Handle */}
       <div
+        ref={handleRef}
         onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        className="py-3 flex justify-center cursor-grab"
+        className="py-3 flex justify-center cursor-grab sm:hidden"
       >
         <div className="w-10 h-1.5 bg-gray-400 rounded-full" />
       </div>
 
       <div
-        ref={scrollRef}
-        className="overflow-y-auto flex-1 min-h-0 px-5 pb-1"
-        style={{ WebkitOverflowScrolling: 'touch' }}
+        className="overflow-y-auto flex-1 min-h-0 px-5 pb-2 overscroll-contain"
+        style={{ 
+          WebkitOverflowScrolling: 'touch',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none'
+        }}
       >
         {points.map((point) => {
           const isSelected = selectedMarker?.id === point.id;
@@ -90,16 +124,15 @@ export const LocationPanel = ({
               key={point.id}
               onClick={() => onSelectMarker(point)}
               className={`w-full text-left border-b border-black/10 py-5 ${
-                isSelected ? 'bg-black/5' : 'bg-transparent'
+                isSelected ? 'bg-black/5' : ''
               }`}
             >
               <div className="flex items-center gap-3.5 mb-2.5">
                 <img
                   src={getMarkerSvgUrl(point.type, false)}
-                  alt={point.type}
                   className="w-[26px] h-[26px] flex-shrink-0"
                 />
-                <span className="font-[Courier_New] text-base font-bold text-[#1a1a1a] leading-5">
+                <span className="font-[Courier_New] text-base font-bold text-[#1a1a1a]">
                   {point.name}
                 </span>
               </div>

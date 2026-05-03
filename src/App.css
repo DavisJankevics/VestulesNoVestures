@@ -48,3 +48,8 @@ body.panel-open {
   height: 100vh;
 }
 
+/* Hide scrollbars while maintaining scroll functionality */
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}
+

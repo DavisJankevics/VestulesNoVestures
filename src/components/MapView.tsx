@@ -24,10 +24,12 @@ export const MapView = ({ points }: MapViewProps) => {
   const [mapCenter, setMapCenter] = useState(defaultCenter);
   const [mapInstance, setMapInstance] = useState<google.maps.Map | null>(null);
   const [sheetY, setSheetY] = useState(750);
-  // const [isPanelCollapsed, setIsPanelCollapsed] = useState(true);
+  // Compute a clamped top position for the mobile filter so it sits above the panel.
+  // `sheetY` corresponds to the panel's top in pixels, so the filter's bottom
+  // should be a little above that (12px). Clamp to at least 12px from top.
+  const filterTop = Math.max(12, sheetY - 12);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  // const panelHeightClass = isPanelCollapsed ? 'h-[20vh]' : 'h-[85vh]';
 
   const vestulesData = {
     name: 'Vēstules no vēstures',
@@ -35,54 +37,30 @@ export const MapView = ({ points }: MapViewProps) => {
     type: 'Fakti',
   };
 
-  const filteredPoints = selectedType ? points.filter((point) => point.type === selectedType) : points;
+  const filteredPoints = selectedType ? points.filter((p) => p.type === selectedType) : points;
 
   const API_KEY = import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY || 'AIzaSyBGUQPJZZ_uD9VujzZR61icqpUtdLfjc60';
 
   const mapStyleId = import.meta.env.VITE_APP_MAP_STYLE_ID;
   const mapOptions = { ...getMapOptions(mapStyleId) };
+  const activeDetail = selectedVestules || selectedMarker;
+
   delete (mapOptions as any).center;
 
-  const handleLoadError = (error: Error) => {
-    console.error('Failed to load Google Maps:', error);
-    setLoadError(`Failed to load map: ${error.message}`);
-  };
-
-  const handleLoad = () => {
-    console.log('Google Maps loaded successfully');
-    setIsLoaded(true);
-  };
-
   const handleTypeFilter = (type: string) => {
-    setSelectedType((currentType) => {
-      const nextType = currentType === type ? null : type;
-      if (selectedMarker && nextType && selectedMarker.type !== nextType) {
+    setSelectedType((current) => {
+      const next = current === type ? null : type;
+      if (selectedMarker && next && selectedMarker.type !== next) {
         setSelectedMarker(null);
       }
-      return nextType;
+      return next;
     });
-  };
-
-  const handleUnload = () => {
-    setIsLoaded(false);
   };
 
   if (loadError) {
     return (
       <div className="w-full h-screen flex items-center justify-center bg-red-50 p-4">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-red-600 mb-3">Map Loading Error</h2>
-          <p className="text-red-700 mb-4">{loadError}</p>
-          <div className="text-left bg-red-100 p-4 rounded text-sm text-red-800">
-            <p className="font-semibold mb-2">Troubleshooting steps:</p>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Check your Google Maps API key in .env.local</li>
-              <li>Verify "Maps JavaScript API" is enabled in Google Cloud Console</li>
-              <li>Check API key restrictions (should allow localhost)</li>
-              <li>Open browser console (F12) for more details</li>
-            </ul>
-          </div>
-        </div>
+        <p className="text-red-700">{loadError}</p>
       </div>
     );
   }
@@ -90,45 +68,58 @@ export const MapView = ({ points }: MapViewProps) => {
   return (
     <LoadScript
       googleMapsApiKey={API_KEY}
-      onLoad={handleLoad}
-      onError={handleLoadError}
-      onUnmount={handleUnload}
+      onLoad={() => setIsLoaded(true)}
+      onError={(e) => setLoadError(String(e))}
       libraries={['maps']}
     >
       {!isLoaded && (
-        <div className="w-full h-screen flex items-center justify-center bg-gray-100">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
-            <p className="text-gray-700">Loading map...</p>
-          </div>
+        <div className="w-full h-screen flex items-center justify-center">
+          Loading map...
         </div>
       )}
       {isLoaded && (
-        <div className="relative w-full h-screen overflow-hidden flex flex-row">
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={mapCenter}
-            zoom={15}
-            options={mapOptions}
-            onLoad={(map) => setMapInstance(map)}
-          >
-            {filteredPoints.map((point) => {
-              const isSelected = selectedMarker?.id === point.id;
-              return (
-                <Marker
-                  key={point.id}
-                  position={{ lat: point.lat, lng: point.lng }}
-                  onClick={() => {
-                    setSelectedMarker(point);
-                    setMapCenter({ lat: point.lat, lng: point.lng });
-                    mapInstance?.panTo({ lat: point.lat, lng: point.lng });
-                  }}
-                  title={point.name}
-                  icon={getMarkerSvgUrl(point.type, isSelected)}
-                />
-              );
-            })}
-          </GoogleMap>
+        <div className="relative w-full h-screen overflow-hidden">
+          <div className='sm:flex sm:flex-row block w-full h-full'>
+            <div className='min-w-[70%] w-full h-full'>
+              <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={mapCenter}
+                zoom={15}
+                options={mapOptions}
+                onLoad={(map) => setMapInstance(map)}
+              >
+                {filteredPoints.map((point) => {
+                  const isSelected = selectedMarker?.id === point.id;
+                  return (
+                    <Marker
+                      key={point.id}
+                      position={{ lat: point.lat, lng: point.lng }}
+                      onClick={() => {
+                        setSelectedMarker(point);
+                        setMapCenter({lat: point.lat, lng: point.lng,});
+                        mapInstance?.panTo({lat: point.lat, lng: point.lng,});
+                      }}
+                      icon={getMarkerSvgUrl(point.type, isSelected)}
+                    />
+                  );
+                })}
+              </GoogleMap>
+            </div>
+            <div className='sm:block hidden'>
+              <LocationPanel
+                points={filteredPoints}
+                selectedMarker={selectedMarker}
+                onSelectMarker={setSelectedMarker}
+                sheetY={sheetY}
+                onSheetYChange={setSheetY}
+              />
+            </div>
+            <LocationTypeFilter
+              selectedType={selectedType}
+              onTypeFilter={handleTypeFilter}
+              className="absolute left-4 bottom-4 z-30 max-w-[180px] hidden sm:block"
+            />
+          </div>
           <VestulesButton
             data={vestulesData}
             onClick={(data) => {
@@ -137,18 +128,22 @@ export const MapView = ({ points }: MapViewProps) => {
               } else {
                 setSelectedVestules(data);
               }
+               setSelectedMarker(null);
             }}
-            className='absolute top-4 left-4 z-30'
+            className="absolute top-4 left-4 z-30"
           />
-          <div className='absolute left-0 right-0 bottom-0'>
+          <div className="absolute inset-x-0 bottom-0 sm:hidden">
             <LocationTypeFilter
               selectedType={selectedType}
               onTypeFilter={handleTypeFilter}
-              className="w-[160px] max-w-[180px] ml-4 z-30 fixed"
-              style={{ top: `${sheetY - 150}px` }}
+              className="fixed left-4 z-30 max-w-[180px]"
+              style={{
+                top: `${filterTop}px`,
+                transform: 'translateY(-100%)',
+              }}
             />
             <LocationPanel
-              points={selectedType ? points.filter(p => p.type === selectedType) : points}
+              points={filteredPoints}
               selectedMarker={selectedMarker}
               onSelectMarker={setSelectedMarker}
               sheetY={sheetY}
@@ -156,11 +151,12 @@ export const MapView = ({ points }: MapViewProps) => {
             />
           </div>
 
-          {(selectedMarker || selectedVestules) && (
-            <div className="fixed inset-x-0 top-[10vh] bottom-[10vh] flex justify-center items-center px-4 z-40">
-              <div className="w-full max-w-[520px] h-full rounded-[28px] overflow-hidden flex flex-col shadow-[0_24px_40px_rgba(15,23,42,0.16)] bg-transparent">
+
+          {activeDetail && (
+            <div className="fixed inset-0 z-40 flex items-center justify-center px-4">
+              <div className="w-full max-w-[520px] h-[80vh] rounded-[28px] overflow-hidden shadow-xl bg-transparent">
                 <LocationDetail
-                  point={selectedVestules || selectedMarker!}
+                  point={activeDetail}
                   onBack={() => {
                     setSelectedMarker(null);
                     setSelectedVestules(null);

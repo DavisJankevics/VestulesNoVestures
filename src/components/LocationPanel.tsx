@@ -93,7 +93,7 @@ export const LocationPanel = ({
 
   return (
     <div
-      className="fixed left-0 right-0 bottom-0 max-w-[520px] mx-auto bg-[#F5EDE0] flex flex-col sm:relative sm:max-w-[450px] h-full"
+      className="fixed left-0 right-0 bottom-0 w-full max-w-[640px] mx-auto bg-[#F5EDE0] flex flex-col sm:relative sm:max-w-[450px] h-full"
       style={isNotSmScreen ? {
         height: `calc(100vh - ${sheetY}px)`,
         transition: isDraggingRef.current ? 'none' : 'height 0.25s ease',

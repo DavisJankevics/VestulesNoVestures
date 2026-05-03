@@ -117,7 +117,7 @@ export const MapView = ({ points }: MapViewProps) => {
             <LocationTypeFilter
               selectedType={selectedType}
               onTypeFilter={handleTypeFilter}
-              className="absolute left-4 bottom-4 z-30 max-w-[180px] hidden sm:block"
+              className="fixed left-4 bottom-4 z-30 max-w-[180px] hidden sm:block"
             />
           </div>
           <VestulesButton
@@ -132,7 +132,7 @@ export const MapView = ({ points }: MapViewProps) => {
             }}
             className="absolute top-4 left-4 z-30"
           />
-          <div className="absolute inset-x-0 bottom-0 sm:hidden">
+          <div className="fixed inset-x-0 bottom-0 sm:hidden">
             <LocationTypeFilter
               selectedType={selectedType}
               onTypeFilter={handleTypeFilter}

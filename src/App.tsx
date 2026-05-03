@@ -4,7 +4,9 @@ import './App.css'
 
 function App() {
   return (
-    <MapView points={mockPoints} />
+    <div className='h-[100dvh]'>
+      <MapView points={mockPoints} />
+    </div>
   )
 }
 

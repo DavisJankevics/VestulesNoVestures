@@ -21,16 +21,13 @@ export const MapView = ({ points }: MapViewProps) => {
   const [selectedMarker, setSelectedMarker] = useState<MapPoint | null>(null);
   const [selectedVestules, setSelectedVestules] = useState<{ name: string; description: string; type: string } | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
-  const [mapCenter, setMapCenter] = useState(defaultCenter);
   const [mapInstance, setMapInstance] = useState<google.maps.Map | null>(null);
   const [sheetY, setSheetY] = useState(750);
-  // Compute a clamped top position for the mobile filter so it sits above the panel.
-  // `sheetY` corresponds to the panel's top in pixels, so the filter's bottom
-  // should be a little above that (12px). Clamp to at least 12px from top.
   const filterTop = Math.max(12, sheetY - 12);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
-
+  
+  const mapCenter = defaultCenter;
   const vestulesData = {
     name: 'Vēstules no vēstures',
     description: 'Vēstules no vēstures ir interpretatīvās navigācijas projekts Āgenskalnā, kas aicina iepazīt pilsētvidi caur stāstiem.',
@@ -56,6 +53,41 @@ export const MapView = ({ points }: MapViewProps) => {
       return next;
     });
   };
+
+  const smoothPanTo = (map: google.maps.Map, target: google.maps.LatLngLiteral, duration: number = 800) => {
+    const start = map.getCenter();
+    if (!start) return;
+
+    const startLat = start.lat();
+    const startLng = start.lng();
+
+    const deltaLat = target.lat - startLat;
+    const deltaLng = target.lng - startLng;
+
+    const startTime = performance.now();
+
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // easeInOut
+      const ease =
+        progress < 0.5
+          ? 2 * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+      const lat = startLat + deltaLat * ease;
+      const lng = startLng + deltaLng * ease;
+
+      map.setCenter({ lat, lng });
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+};
 
   if (loadError) {
     return (
@@ -96,8 +128,12 @@ export const MapView = ({ points }: MapViewProps) => {
                       position={{ lat: point.lat, lng: point.lng }}
                       onClick={() => {
                         setSelectedMarker(point);
-                        setMapCenter({lat: point.lat, lng: point.lng,});
-                        mapInstance?.panTo({lat: point.lat, lng: point.lng,});
+                        if (mapInstance) {
+                          smoothPanTo(mapInstance, {
+                            lat: point.lat,
+                            lng: point.lng,
+                          }, 750);
+                        }
                       }}
                       icon={getMarkerSvgUrl(point.type, isSelected)}
                     />
@@ -112,6 +148,8 @@ export const MapView = ({ points }: MapViewProps) => {
                 onSelectMarker={setSelectedMarker}
                 sheetY={sheetY}
                 onSheetYChange={setSheetY}
+                mapInstance={mapInstance}
+                smoothPanTo={smoothPanTo}
               />
             </div>
             <LocationTypeFilter
@@ -131,6 +169,7 @@ export const MapView = ({ points }: MapViewProps) => {
                setSelectedMarker(null);
             }}
             className="absolute top-4 left-4 z-30"
+            active={!!selectedVestules}
           />
           <div className="fixed inset-x-0 bottom-0 sm:hidden">
             <LocationTypeFilter
@@ -148,13 +187,15 @@ export const MapView = ({ points }: MapViewProps) => {
               onSelectMarker={setSelectedMarker}
               sheetY={sheetY}
               onSheetYChange={setSheetY}
+              mapInstance={mapInstance}
+              smoothPanTo={smoothPanTo}
             />
           </div>
 
 
           {activeDetail && (
-            <div className="fixed inset-0 z-40 flex items-center justify-center px-4">
-              <div className="w-full max-w-[520px] h-[80vh] rounded-[28px] overflow-hidden shadow-xl bg-transparent">
+            <div className="fixed inset-0 z-40 flex items-center justify-center px-4 pointer-events-none">
+              <div className="w-full max-w-[480px] h-[80vh] rounded-[28px] overflow-hidden shadow-xl bg-transparent pointer-events-auto">
                 <LocationDetail
                   point={activeDetail}
                   onBack={() => {

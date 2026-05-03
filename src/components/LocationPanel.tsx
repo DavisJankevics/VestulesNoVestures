@@ -8,6 +8,8 @@ interface LocationPanelProps {
   onSelectMarker: (point: MapPoint | null) => void;
   sheetY: number;
   onSheetYChange: (sheetY: number) => void;
+  mapInstance?: google.maps.Map | null;
+  smoothPanTo?: (map: google.maps.Map, target: google.maps.LatLngLiteral, duration?: number) => void;
 }
 
 export const LocationPanel = ({
@@ -16,6 +18,8 @@ export const LocationPanel = ({
   onSelectMarker,
   sheetY,
   onSheetYChange,
+  mapInstance,
+  smoothPanTo,
 }: LocationPanelProps) => {
   const SNAP_TOP = 350;
   const SNAP_MID = 600;
@@ -122,7 +126,14 @@ export const LocationPanel = ({
           return (
             <button
               key={point.id}
-              onClick={() => onSelectMarker(point)}
+              onClick={() => {
+                onSelectMarker(point);
+                if (mapInstance && smoothPanTo) {
+                  smoothPanTo(mapInstance, { lat: point.lat, lng: point.lng }, 750);
+                } else if (mapInstance) {
+                  mapInstance.panTo({ lat: point.lat, lng: point.lng });
+                }
+              }}
               className={`w-full text-left border-b border-black/10 py-5 ${
                 isSelected ? 'bg-black/5' : ''
               }`}

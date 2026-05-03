@@ -12,6 +12,7 @@ interface VestulesButtonProps {
   onClick?: (data: VestulesButtonData) => void;
   className?: string;
   type?: string;
+  active?: boolean;
 }
 
 export const VestulesButton = ({
@@ -19,12 +20,18 @@ export const VestulesButton = ({
   onClick,
   className = '',
   type = 'Fakti',
+  active,
 }: VestulesButtonProps) => {
-  const [isSelected, setIsSelected] = useState(false);
+  const [localSelected, setLocalSelected] = useState(false);
+  const isSelected = typeof active === 'boolean' ? active : localSelected;
 
   const handleClick = () => {
-    setIsSelected(!isSelected);
-    onClick?.(data);
+    if (typeof active === 'boolean') {
+      onClick?.(data);
+    } else {
+      setLocalSelected((s) => !s);
+      onClick?.(data);
+    }
   };
   const styles = getLocationTypeStyle(type);
 

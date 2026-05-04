@@ -143,12 +143,12 @@ export const LocationPanel = ({
                   src={getMarkerSvgUrl(point.type, false)}
                   className="w-[26px] h-[26px] flex-shrink-0"
                 />
-                <span className="font-[Roboto] text-[26px] text-[#1a1a1a]">
+                <span className="font-[Roboto] text-[16px] text-[#1a1a1a]">
                   {point.name}
                 </span>
               </div>
 
-              <p className="pl-10 font-[Gilroy] text-[22px] text-[#444] leading-[120%]">
+              <p className="pl-10 font-[Gilroy] text-[14px] text-[#444] leading-[120%]">
                 {point.shortDescription}
               </p>
             </button>

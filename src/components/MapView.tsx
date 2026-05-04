@@ -175,7 +175,7 @@ export const MapView = ({ points }: MapViewProps) => {
             <LocationTypeFilter
               selectedType={selectedType}
               onTypeFilter={handleTypeFilter}
-              className="fixed left-4 z-30 max-w-[220px]"
+              className="fixed left-4 z-30 max-w-[200px]"
               style={{
                 top: `${filterTop}px`,
                 transform: 'translateY(-100%)',

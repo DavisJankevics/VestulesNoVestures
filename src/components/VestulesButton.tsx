@@ -36,7 +36,7 @@ export const VestulesButton = ({
   const styles = getLocationTypeStyle(type);
 
   const baseStyles =
-    'w-fit h-fit inline-flex items-center text-center justify-center gap-3 rounded-full py-1 px-2 font-[Courier_New] text-sm font-semibold transition';
+    'w-fit h-fit inline-flex items-center text-[26px] justify-center gap-3 rounded-full py-1 px-8 font-[Roboto] text-sm transition';
 
   const variantStyles = {
     ghost: `bg-white border border-current/15 ${styles.iconColorClass} !${styles.textColorClass}`,
@@ -48,7 +48,7 @@ export const VestulesButton = ({
   return (
     <button
       onClick={handleClick}
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      className={`${baseStyles} ${variantStyles[variant]} ${className} font-[Roboto]`}
     >
       {data.name}
     </button>

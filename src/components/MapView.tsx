@@ -155,7 +155,7 @@ export const MapView = ({ points }: MapViewProps) => {
             <LocationTypeFilter
               selectedType={selectedType}
               onTypeFilter={handleTypeFilter}
-              className="fixed left-4 bottom-4 z-30 max-w-[180px] hidden sm:block"
+              className="fixed left-4 bottom-4 z-30 max-w-[220px] hidden sm:block"
             />
           </div>
           <VestulesButton
@@ -175,7 +175,7 @@ export const MapView = ({ points }: MapViewProps) => {
             <LocationTypeFilter
               selectedType={selectedType}
               onTypeFilter={handleTypeFilter}
-              className="fixed left-4 z-30 max-w-[180px]"
+              className="fixed left-4 z-30 max-w-[220px]"
               style={{
                 top: `${filterTop}px`,
                 transform: 'translateY(-100%)',

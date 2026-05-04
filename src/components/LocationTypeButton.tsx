@@ -36,7 +36,7 @@ export const LocationTypeButton = ({
     <button
       type="button"
       onClick={onClick}
-      className={`inline-flex items-center gap-3 rounded-full px-4 py-2 font-[Courier_New] text-sm font-semibold transition ${variantClasses[variant]} ${className}`}
+      className={`inline-flex items-center gap-3 rounded-full px-4 py-1 font-[Roboto] text-[26px] transition ${variantClasses[variant]} ${className}`}
     >
       <span className={`inline-flex h-2.5 w-2.5 rounded-full ${dotClasses[variant]}`} />
       <span>{label}</span>

@@ -1,5 +1,5 @@
-Fonts panel aprakstam, atverot kartinu. - gilroy
-Fonts - roboto mono - Pogas, Nosaukumi, Atverot kartinu nosaukums
+Fonts panel aprakstam, atverot kartinu. - gilroy - done
+Fonts - roboto mono - Pogas, Nosaukumi, Atverot kartinu nosaukums - done
 Card - bildite tad texts
 Ierobežojumi kartei - redz dauggavu, zasulaiuku, un āgenskalna apkārtni. Nevar scrollot uz krieviju utt.
 

@@ -148,7 +148,7 @@ export const LocationPanel = ({
                 </span>
               </div>
 
-              <p className="pl-10 font-serif text-sm text-[#444] leading-[1.65]">
+              <p className="pl-10 font-[Gilroy] text-sm text-[#444] leading-[1.65]">
                 {point.shortDescription}
               </p>
             </button>

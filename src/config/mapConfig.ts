@@ -19,6 +19,15 @@ export const getMapOptions = (styleId?: string): any => {
     gestureHandling: 'greedy',
     clickableIcons: false,
     colorScheme: 'LIGHT',
+    restriction:{
+      latLngBounds: {
+        north: 56.96,
+        south: 56.925,
+        west: 24.05,
+        east: 24.12,
+      },
+      strictBounds: true,
+    },
   };
 
   // Apply custom styling if styleId is provided

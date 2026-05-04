@@ -5,8 +5,7 @@ export interface MapPoint {
   name: string;
   lat: number;
   lng: number;
-  description?: string;
-  shortDescription: string;
+  description: string;
   type: string;
 }
 

@@ -31,7 +31,7 @@ export const LocationDetail = ({ point, onBack }: LocationDetailProps) => {
       </div>
 
       {/* <p className="m-0 font-serif text-[15px] leading-[1.8]">
-        {point.shortDescription}
+        {point.description}
       </p> */}
 
       {point.description && (

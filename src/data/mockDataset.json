@@ -4,8 +4,7 @@
     "name": "Old Town",
     "lat": 56.9437,
     "lng": 24.1086,
-    "description": "Historic medieval old town",
-    "shortDescription": "UNESCO World Heritage site with cobblestone streets and historic architecture",
+    "description": "UNESCO World Heritage site with cobblestone streets and historic architecture",
     "type": "Fakti"
   },
   {
@@ -13,8 +12,7 @@
     "name": "Riga Cathedral",
     "lat": 56.9465,
     "lng": 24.1065,
-    "description": "Historic Gothic cathedral",
-    "shortDescription": "The largest medieval church in the Baltic states with stunning architecture",
+    "description": "The largest medieval church in the Baltic states with stunning architecture",
     "type": "Kultūra"
   },
   {
@@ -22,8 +20,7 @@
     "name": "House of Blackheads",
     "lat": 56.9446,
     "lng": 24.1079,
-    "description": "Historic guild building",
-    "shortDescription": "Iconic Renaissance building with distinctive architecture in Old Town",
+    "description": "Iconic Renaissance building with distinctive architecture in Old Town",
     "type": "Kultūra"
   },
   {
@@ -31,8 +28,7 @@
     "name": "Freedom Monument",
     "lat": 56.9513,
     "lng": 24.1066,
-    "description": "National symbol of independence",
-    "shortDescription": "Towering monument representing Latvia's independence and freedom",
+    "description": "Towering monument representing Latvia's independence and freedom",
     "type": "Fakti"
   },
   {
@@ -40,8 +36,7 @@
     "name": "Latvian National Museum of Art",
     "lat": 56.9480,
     "lng": 24.1165,
-    "description": "Major art museum",
-    "shortDescription": "Extensive collection of Latvian and international art spanning centuries",
+    "description": "Extensive collection of Latvian and international art spanning centuries",
     "type": "Kultūra"
   },
   {
@@ -49,8 +44,7 @@
     "name": "St. Peter's Church",
     "lat": 56.9460,
     "lng": 24.1073,
-    "description": "Gothic church with tower",
-    "shortDescription": "Tallest church in Old Town with panoramic views from the tower",
+    "description": "Tallest church in Old Town with panoramic views from the tower",
     "type": "Cilvēkstāsti"
   },
   {
@@ -58,8 +52,7 @@
     "name": "Daugava River",
     "lat": 56.9500,
     "lng": 24.1000,
-    "description": "Main river of Riga",
-    "shortDescription": "Historic river that shaped the city's development and commerce",
+    "description": "Historic river that shaped the city's development and commerce",
     "type": "Fakti"
   },
   {
@@ -67,8 +60,7 @@
     "name": "Kronvald Park",
     "lat": 56.9550,
     "lng": 24.1200,
-    "description": "Green public space",
-    "shortDescription": "Beautiful urban park popular for recreation and relaxation",
+    "description": "Beautiful urban park popular for recreation and relaxation",
     "type": "Cilvēkstāsti"
   },
   {
@@ -76,8 +68,7 @@
     "name": "Riga Central Market",
     "lat": 56.9387,
     "lng": 24.1103,
-    "description": "Historic market square",
-    "shortDescription": "Vibrant marketplace with traditional Estonian, Latvian, and Lithuanian goods",
+    "description": "Vibrant marketplace with traditional Estonian, Latvian, and Lithuanian goods",
     "type": "Cilvēkstāsti"
   },
   {
@@ -85,8 +76,7 @@
     "name": "Three Brothers Houses",
     "lat": 56.9447,
     "lng": 24.1082,
-    "description": "Medieval residential buildings",
-    "shortDescription": "Three historic townhouses representing different architectural styles through centuries",
+    "description": "Three historic townhouses representing different architectural styles through centuries",
     "type": "Kultūra"
   }
 ]

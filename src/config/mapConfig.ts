@@ -6,8 +6,8 @@ export interface MapOptions {
 
 export const getMapOptions = (styleId?: string): any => {
   const options: any = {
-    zoom: 15,
-    center: { lat: 56.9496, lng: 24.1052 },
+    zoom: 16.5,
+    center: { lat: 56.9387, lng: 24.0728 },
     mapTypeControl: false,
     streetViewControl: false,
     fullscreenControl: false,
@@ -30,7 +30,6 @@ export const getMapOptions = (styleId?: string): any => {
     },
   };
 
-  // Apply custom styling if styleId is provided
   if (styleId) {
     options.mapId = styleId;
   }
@@ -39,7 +38,7 @@ export const getMapOptions = (styleId?: string): any => {
 };
 
 export const defaultCenter = {
-  lat: 56.9496,
-  lng: 24.1052,
+  lat: 56.9387,
+  lng: 24.0728,
 };
 

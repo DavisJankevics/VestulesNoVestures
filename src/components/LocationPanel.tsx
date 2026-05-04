@@ -149,7 +149,9 @@ export const LocationPanel = ({
               </div>
 
               <p className="pl-10 font-[Gilroy] text-[14px] text-[#444] leading-[120%]">
-                {point.shortDescription}
+                {point.description?.length > 200
+                  ? point.description.slice(0, 200).replace(/\s+\S*$/, '') + '...'
+                  : point.description}
               </p>
             </button>
           );

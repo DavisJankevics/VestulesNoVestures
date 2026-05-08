@@ -10,9 +10,6 @@ function resolveMapped(src: string) {
   }
   return mapped;
 }
-function rewriteSrcs(html: string) {
-  return String(html).replace(/src=("|')(.*?)("|')/gi, (_m, q, url) => `src=${q}${resolveMapped(url)}${q}`);
-}
 import type { MapPoint } from '../data/mockDataset';
 import { getMarkerSvgUrl } from '../utils/markerUtils';
 

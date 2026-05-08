@@ -1,4 +1,18 @@
 import {useEffect, useRef, useState, type TouchEvent as ReactTouchEvent,} from 'react';
+import kmlImageMap from '../data/kmlImageMap.json';
+const imageMap: Record<string, string> = kmlImageMap as unknown as Record<string, string>;
+function resolveMapped(src: string) {
+  const mapped = imageMap && imageMap[src] ? imageMap[src] : src;
+  const base = import.meta.env.BASE_URL || '/';
+  if (mapped.startsWith('/')) {
+    // avoid double slashes
+    return (base.endsWith('/') ? base.slice(0, -1) : base) + mapped;
+  }
+  return mapped;
+}
+function rewriteSrcs(html: string) {
+  return String(html).replace(/src=("|')(.*?)("|')/gi, (_m, q, url) => `src=${q}${resolveMapped(url)}${q}`);
+}
 import type { MapPoint } from '../data/mockDataset';
 import { getMarkerSvgUrl } from '../utils/markerUtils';
 
@@ -148,11 +162,50 @@ export const LocationPanel = ({
                 </span>
               </div>
 
-              <p className="pl-10 font-[Gilroy] text-[14px] text-[#444] leading-[120%]">
-                {point.description?.length > 200
-                  ? point.description.slice(0, 200).replace(/\s+\S*$/, '') + '...'
-                  : point.description}
-              </p>
+              {/* If description contains an <img> tag, extract first src and show thumbnail */}
+              {point.description && /<img[^>]+src=["']([^"']+)["']/i.test(point.description) ? (
+                (() => {
+                  const m = point.description.match(/<img[^>]+src=["']([^"']+)["']/i);
+                  const src = m ? m[1] : null;
+                  // remove only the first <img> tag and get plain text snippet
+                  const htmlWithoutFirstImg = String(point.description).replace(/<img[^>]*>/i, '');
+                  const textOnly = htmlWithoutFirstImg.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                  const snippet = textOnly.length > 100 ? textOnly.slice(0, 100).replace(/\s+\S*$/, '') + '...' : textOnly;
+
+                  return (
+                    <div className="pl-10 flex items-start gap-3">
+                      {src && (
+                        <img
+                          src={resolveMapped(src)}
+                          alt="thumb"
+                          className="w-20 h-14 object-cover flex-shrink-0 rounded"
+                          onError={(e) => {
+                            const img = e.currentTarget as HTMLImageElement;
+                            if (!img.dataset.tried) {
+                              img.dataset.tried = '1';
+                              if (imageMap && imageMap[src]) {
+                                img.src = resolveMapped(src);
+                                return;
+                              }
+                              if (!/\.(jpg|jpeg|png|gif)$/i.test(img.src)) {
+                                img.src = img.src + '.jpg';
+                              }
+                            }
+                          }}
+                        />
+                      )}
+                      <div className="font-[Gilroy] text-[14px] text-[#444] leading-[120%]">{snippet}</div>
+                    </div>
+                  );
+                })()
+              ) : (
+                <div className="pl-10 font-[Gilroy] text-[14px] text-[#444] leading-[120%]">
+                  {(() => {
+                    const textOnly = String(point.description || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                    return textOnly.length > 100 ? textOnly.slice(0, 100).replace(/\s+\S*$/, '') + '...' : textOnly;
+                  })()}
+                </div>
+              )}
             </button>
           );
         })}

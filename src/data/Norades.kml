@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Norādes</name>
+    <description/>
+    <Style id="icon-1899-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-DB4436-normal">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-DB4436-highlight">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-DB4436">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-DB4436-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-DB4436-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-DB4436-nodesc-normal">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-DB4436-nodesc-highlight">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-DB4436-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-DB4436-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-DB4436-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-1267FF-5000-nodesc-normal">
+      <LineStyle>
+        <color>ffff6712</color>
+        <width>5</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-1267FF-5000-nodesc-highlight">
+      <LineStyle>
+        <color>ffff6712</color>
+        <width>7.5</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-1267FF-5000-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-1267FF-5000-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-1267FF-5000-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Fakti</name>
+      <Placemark>
+        <name>Tramvajs ved caur tirgu</name>
+        <description><![CDATA[Šodien te pietur daudzi, bet 1898. gadā, kad atvēra Āgenskalna tirgu, sabiedrisko nācās gaidīt vēl 7 gadus.<br><br>8. tramvajs ne vien brauca uz tirgu, bet pat izbrauca tam cauri, jo jaunizveidotā Bāriņu iela nošķēla tirgus placim nelielu gabaliņu un kādu laiku tirgošanās notika abpus sliedēm. ]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            24.0709347,56.9355909,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tramvaja ceļš</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            24.0708972,56.935596,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tirgus poētika</name>
+        <description><![CDATA[Vai zināji, ka Āgenskalna tirgus bija svarīgs pieturas punkts dzejnieka Ojāra Vācieša iemīļotajā pastaigu lokā?<br><br>Autoram esot bijusi īstena<br>kaislība uz iepirkšanos tirgū, paticis ieklausīties cilvēku valodās, iejukt tirgus burzmā un kņadā. ]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            24.0728344,56.9358146,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Alīses ielas
+ūdenstornis
+</name>
+        <description>Arhitekta V. Bokslafa projektētais 1911. gadā uzceltais ūdenstornis sākotnēji bija krietni zemāks nekā šodien. Pagājušā gadsimta 30. gados, kad apkārtējā apbūve kļuva augstāka, tornis vairs nespēja apgādāt jauno ēku augšējos stāvus ar ūdeni.</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            24.0683348,56.9450646,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Torņa
+pacelšana
+</name>
+        <description><![CDATA[1939. gadā tika veikta<br>neparasta un drosmīga inženiertehniskā operācija. Zem torņa galvas mūrī izkala speciālas iedobes un tajās ievietoja domkratus. Nepārtraucot ūdensapgādi pilsētai, torņa augšdaļu pacēla par 7,5 metriem, vienlaikus turpinot mūrēt torņa sienas.]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            24.0689598,56.9448612,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Kultūra</name>
+      <Placemark>
+        <name>Āgenskalna tirgus rīts</name>
+        <description><![CDATA[Par puķu cenām tantes purpina,<br>viens aliņu caur zobiem kāš,<br>un veikaliņā, kur dod kurpes,<br>ir ieradies bass pestītāš.<br><br>Tam vajag ceriņkrāsas kedas<br>no īstas ceriņkoka liests,<br>lai pudeļstikli kājās neduras,<br>kad viņš uz paradīzi ies.<br><br>[...]]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            24.0726547,56.9358081,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tornis Rec.</name>
+        <description><![CDATA[Ūdenstornī 20 gadus mājoja alternatīvās mūzikas kopiena<br>1991. gada pavasarī torņa atslēgas nonāca pie indī rok grupas Ir bijuši mati un izbijuši, kas šeit ierīkoja mēģinājuma telpas. Drīz vien te sāka pulcēties un ierakstīties arī citas alternatīvās mūzikas grupas, tostarp mūsdienu leģendas Baložu pilni pagalmi, Kartāga, Bērnības milicija u.c.]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            24.067903,56.944889,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vecais tramvaja ceļš</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AL_Y2X5Ho8gNHhNJrMA09iS4HSgdeQT0zJjblJL0E3ep1zYGdUmdwYDHlY3RyXTxWgRy9-DnTkFa8N91cXYiawPfJCZqCs2WwJdS0UQOXZ25Y6y5_j1doBNdE06clo3CMBpPlspTU5G-ptDKqz287ncR6jS1xaa316DzLKJcwP-Grxw5vMPAimeW5sz1_zlGa_FIC8nRw5AbCIHQb_D2KrBhkJv_nZwWFH9oT6GYayUORAZVm5VnchhS6cW9JPg?authuser=0&fife=s16383" height="200" width="auto" /><br><br>Nometņu un Lapu ielas krustojums (pirms 1914)]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AL_Y2X5Ho8gNHhNJrMA09iS4HSgdeQT0zJjblJL0E3ep1zYGdUmdwYDHlY3RyXTxWgRy9-DnTkFa8N91cXYiawPfJCZqCs2WwJdS0UQOXZ25Y6y5_j1doBNdE06clo3CMBpPlspTU5G-ptDKqz287ncR6jS1xaa316DzLKJcwP-Grxw5vMPAimeW5sz1_zlGa_FIC8nRw5AbCIHQb_D2KrBhkJv_nZwWFH9oT6GYayUORAZVm5VnchhS6cW9JPg?authuser=0&fife=s16383]]></value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            24.0726947,56.9387717,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vecais tramvaja ceļš</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AL_Y2X5QQi-mvfW_s0ZYu1qMdiQHI8GiU6mR54gCPYEoYj5bhsrKUkHhF8BH6xA5HA_8Z7IRuD_ctirCp6QZFXezXAAkOpFP8aSF-zeiQsXSaDuyKvkCXWp82EYyVds-blwpNa059_sB8C2sG1aAU_F5HQedLqusvgEsG2Of1ZJgm3hWfkCngxdiPrl5JYMohZYispN1FyfrH9VMeJJSGf1g0vXEikLeAUDflRr5ou12wpNNWCAHYEbY1WJe7tk?authuser=0&fife=s16383" height="200" width="auto" /><br><br>Nometņu iela (1906-1915)]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AL_Y2X5QQi-mvfW_s0ZYu1qMdiQHI8GiU6mR54gCPYEoYj5bhsrKUkHhF8BH6xA5HA_8Z7IRuD_ctirCp6QZFXezXAAkOpFP8aSF-zeiQsXSaDuyKvkCXWp82EYyVds-blwpNa059_sB8C2sG1aAU_F5HQedLqusvgEsG2Of1ZJgm3hWfkCngxdiPrl5JYMohZYispN1FyfrH9VMeJJSGf1g0vXEikLeAUDflRr5ou12wpNNWCAHYEbY1WJe7tk?authuser=0&fife=s16383]]></value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            24.0710432,56.9367658,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vecais tramvaja ceļš</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AL_Y2X4mrYnkEVX_pBHSplw4edTxE6MGlDjFYbqgD2wYTTtwPdTpW3jeODX-T0OvZcM35ru_No9V5AUNYWCyXHL-EaIfJ3ba04yxXyRHFcnXTM-VYtRv7smJHW84IkO8gW8yR5Z6A4D8gWufjDwPx37eM4N9MaO41ZvEzbKOrHLDcWJbxdxZbIAejuSc4qxp36nRcLw7j6y9tytb-qaNNLi8pQHzIVEkpHfFzLfluO9a52H5JtB4NtGAstQKl0Y?authuser=0&fife=s16383" height="200" width="auto" /><br><br>20. gs. sākumā tramvaja līnija ieskāva tirgu no divām pusēm. <br><br>Pagriežoties no Bāriņu uz Nometņu ielu, tā veda gar koka kiosku rindām, ko tolaik dēvēja par palieveņiem.<br><br>Pagrieziens no Nometņu uz Bāriņu ielu (1909)]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AL_Y2X4mrYnkEVX_pBHSplw4edTxE6MGlDjFYbqgD2wYTTtwPdTpW3jeODX-T0OvZcM35ru_No9V5AUNYWCyXHL-EaIfJ3ba04yxXyRHFcnXTM-VYtRv7smJHW84IkO8gW8yR5Z6A4D8gWufjDwPx37eM4N9MaO41ZvEzbKOrHLDcWJbxdxZbIAejuSc4qxp36nRcLw7j6y9tytb-qaNNLi8pQHzIVEkpHfFzLfluO9a52H5JtB4NtGAstQKl0Y?authuser=0&fife=s16383]]></value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            24.0708445,56.9358873,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Cilvēkstāsti</name>
+      <Placemark>
+        <name>Āgenskalna tirgus</name>
+        <description><![CDATA[ir apkaimes sirds jau vairāk nekā 100 gadu, taču 19. gs. beigās šī vieta bija tuksnesīga nomale.<br>Tirgotāji te sāka rosību 1898. gadā, taču savu lepnumu - R. Šmēlinga projektēto paviljonu (1925) - apkaime iemantoja tikai pēc kara.]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            24.0716652,56.9356892,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Āgenskalna TV tornis</name>
+        <description>Iespaidīgais, 110 m augstais TV tornis šurp ir atvests no tālās Kaspijas jūras, jo oriģināli paredzēts naftas urbšanai. Kad notika TV centra pirmā pārraide (06.11.1954.), visā Rīgā esot bijuši vien 20 televizori!</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            24.07239,56.9368977,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nometņu iela 45</name>
+        <description>Eklektiski dekoratīvā jūgendstila pērle (~1903) ir viens no skaistākajiem un skumjākajiem apkaimes namiem. Oriģinālais projekts ir gājis zudībā, taču tiek uzskatīts, ka tās autori ir Heinrihs Šēls un Fridrihs Šefels.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            24.0732028,56.9392694,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Āgenskalna priedes</name>
+        <description>Nekas vairs neliecina, ka šeit bija Švarcmuižas augstākā kāpa ar rodeļbāni, kur pirmo reizi izmēģināts Tobogans - 4 vīru ragavas ar stūri. Kāpu noraka, lai uzceltu Rīgas pirmo blokmāju mikrorajonu Āgenskalna priedes (1958).</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            24.0633382,56.944704,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rīgas Valsts vācu ģimnāzija</name>
+        <description>(1931) var lepoties ne vien ar izciliem absolventiem, bet arī iespaidīgu liepu dzīvžogu, strūklaku un jauku rotaļu laukumiņu pagalmā. Starp citu, mazie vārtiņi vienmēr ir vaļā!</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            24.0631385,56.9466753,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vecā tiesas māja</name>
+        <description><![CDATA[senāk bija lepns īres nams, kur pēc atgriešanās no trimdas 1920. gadā neilgi dzīvoja Rainis ar<br>Aspaziju. Te mitis arī Haralds Blaus - pirmais olimpiskās medaļas ieguvējs no Latvijas teritorijas.]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            24.0725907,56.9457925,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Valsts Arhīva ēka</name>
+        <description>(1913), kuras fasādi rotā reta Rīgas ģerboņa versija, ir VEF šūpulis, jo te atradās slavenās fabrikas pirmsākums - Pasta un telegrāfa centrāles mehāniskās darbnīcas.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            24.0742879,56.9463376,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Directions</name>
+      <Placemark>
+        <name>Directions from Āgenskalna tirgus to Valsts Arhīva ēka</name>
+        <styleUrl>#line-1267FF-5000-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            24.07182,56.93548,0
+            24.07175,56.93547,0
+            24.07159,56.93545,0
+            24.07155,56.93544,0
+            24.07139,56.93545,0
+            24.07128,56.93548,0
+            24.07118,56.9355,0
+            24.07107,56.93554,0
+            24.07102,56.93563,0
+            24.07094,56.93589,0
+            24.07093,56.93596,0
+            24.07092,56.93603,0
+            24.07093,56.93616,0
+            24.07111,56.93672,0
+            24.07119,56.93688,0
+            24.07125,56.93698,0
+            24.07133,56.93708,0
+            24.07152,56.93726,0
+            24.07189,56.93761,0
+            24.07254,56.93841,0
+            24.07286,56.93879,0
+            24.07295,56.93887,0
+            24.07348,56.9393,0
+            24.07325,56.93934,0
+            24.07203,56.93958,0
+            24.072,56.93959,0
+            24.07198,56.9396,0
+            24.07196,56.9396,0
+            24.07195,56.93961,0
+            24.07195,56.93962,0
+            24.07194,56.93963,0
+            24.07193,56.93964,0
+            24.07193,56.93965,0
+            24.07193,56.93967,0
+            24.07193,56.93968,0
+            24.07194,56.93972,0
+            24.07196,56.93978,0
+            24.0721,56.94013,0
+            24.07211,56.94015,0
+            24.07221,56.94043,0
+            24.07228,56.94064,0
+            24.07228,56.94071,0
+            24.07225,56.94077,0
+            24.07219,56.94084,0
+            24.0711,56.9405,0
+            24.07103,56.94056,0
+            24.071,56.94059,0
+            24.07097,56.9406,0
+            24.07091,56.94062,0
+            24.07087,56.94062,0
+            24.07082,56.94063,0
+            24.07075,56.94062,0
+            24.07068,56.9406,0
+            24.07063,56.94059,0
+            24.07058,56.94058,0
+            24.07026,56.94048,0
+            24.07014,56.94058,0
+            24.06991,56.94078,0
+            24.06949,56.94111,0
+            24.06942,56.94117,0
+            24.06938,56.94121,0
+            24.06933,56.94125,0
+            24.06849,56.94195,0
+            24.06841,56.94202,0
+            24.06776,56.94264,0
+            24.06727,56.94309,0
+            24.06706,56.94332,0
+            24.06693,56.94346,0
+            24.06687,56.94351,0
+            24.06675,56.94361,0
+            24.06655,56.94378,0
+            24.0664,56.94392,0
+            24.06627,56.94402,0
+            24.0661,56.94413,0
+            24.06586,56.94403,0
+            24.06552,56.9439,0
+            24.06525,56.94382,0
+            24.06499,56.94375,0
+            24.06503,56.94398,0
+            24.06504,56.9441,0
+            24.06504,56.94413,0
+            24.06501,56.94418,0
+            24.06498,56.94421,0
+            24.06493,56.94425,0
+            24.06483,56.9443,0
+            24.06472,56.94436,0
+            24.06465,56.94438,0
+            24.06443,56.94441,0
+            24.0639,56.94481,0
+            24.06381,56.94487,0
+            24.06366,56.945,0
+            24.06364,56.94502,0
+            24.06358,56.94506,0
+            24.06346,56.94514,0
+            24.06334,56.94522,0
+            24.06324,56.94528,0
+            24.06306,56.94539,0
+            24.06291,56.94546,0
+            24.06281,56.9455,0
+            24.06271,56.94552,0
+            24.06262,56.94553,0
+            24.06232,56.94598,0
+            24.06306,56.94632,0
+            24.06325,56.94641,0
+            24.06343,56.9465,0
+            24.06358,56.94657,0
+            24.06377,56.94665,0
+            24.06433,56.9469,0
+            24.06444,56.9468,0
+            24.06448,56.94675,0
+            24.06463,56.94666,0
+            24.0647,56.94662,0
+            24.06478,56.94659,0
+            24.06492,56.94655,0
+            24.06513,56.94649,0
+            24.06538,56.94642,0
+            24.06576,56.94637,0
+            24.06591,56.94631,0
+            24.06644,56.94598,0
+            24.06651,56.94589,0
+            24.0666,56.94574,0
+            24.06665,56.94566,0
+            24.06668,56.94557,0
+            24.06676,56.94513,0
+            24.06676,56.94491,0
+            24.06674,56.9448,0
+            24.06674,56.94479,0
+            24.06675,56.94471,0
+            24.06681,56.94462,0
+            24.06683,56.94455,0
+            24.06686,56.94451,0
+            24.06691,56.94444,0
+            24.06742,56.94467,0
+            24.0679,56.94489,0
+            24.06821,56.94503,0
+            24.06845,56.94514,0
+            24.06868,56.94523,0
+            24.06893,56.94535,0
+            24.06911,56.94543,0
+            24.06932,56.94553,0
+            24.07002,56.94584,0
+            24.07018,56.94591,0
+            24.0706,56.94608,0
+            24.07077,56.94616,0
+            24.07109,56.9463,0
+            24.07132,56.94612,0
+            24.07192,56.94575,0
+            24.07218,56.94558,0
+            24.07223,56.94555,0
+            24.07241,56.94541,0
+            24.07251,56.94536,0
+            24.07258,56.94535,0
+            24.07264,56.94534,0
+            24.07267,56.94533,0
+            24.07272,56.94533,0
+            24.07279,56.94534,0
+            24.07288,56.94535,0
+            24.07304,56.94539,0
+            24.07377,56.94572,0
+            24.07415,56.9459,0
+            24.0739,56.94616,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Āgenskalna tirgus</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            24.07182,56.9354833,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nometņu iela 60A, Zemgales priekšpilsēta, Rīga, LV-1002, Latvia</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            24.0715156,56.9372566,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nometņu iela 45</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            24.0732517,56.9393443,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Āgenskalna priedes</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            24.0638965,56.9448081,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rīgas Valsts vācu ģimnāzija</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            24.063426,56.9464965,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Torņa
+pacelšana
+</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            24.0679011,56.9448867,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Baložu iela, Zemgales priekšpilsēta, Rīga, LV-1048, Latvia</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            24.0721765,56.9455836,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Valsts Arhīva ēka</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            24.0739001,56.9461596,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

@@ -28,7 +28,7 @@ export const MapView = ({ points, lines }: MapViewProps) => {
   const mapCenter = defaultCenter;
   const vestulesData = {
     name: 'Vēstules no vēstures',
-    description: 'Vēstules no vēstures ir interpretatīvās navigācijas projekts Āgenskalnā, kas aicina iepazīt pilsētvidi caur stāstiem.',
+    description: 'Vēstules no vēstures ir interpretatīvās navigācijas projekts Āgenskalnā, kas aicina iepazīt pilsētvidi caur stāstiem.<br/><br/>Kartē atzīmētajos punktos iespējams lasīt par konkrētām vietām, notikumiem, personībām un kultūrvēsturiskajiem slāņiem, kas veido Āgenskalna identitāti.<br/><br/>Projekta mērķis ir radīt saistošu un mūsdienīgu veidu, kā orientēties pilsētvidē un vienlaikus iepazīt tās vēsturi.<br/><br/>Projekts izstrādāts kā Latvijas Mākslas akadēmijas maģistra darbs sadarbībā ar Āgenskalna apkaimes biedrība.<br/><br/>Autore: Kitija Paula Ķirķe',
     type: 'Fakti',
   };
 
@@ -38,8 +38,6 @@ export const MapView = ({ points, lines }: MapViewProps) => {
   const mapOptions = useMemo(() => {
     const opts = getMapOptions(mapStyleId);
     const copy = { ...opts };
-    // GoogleMap may manage center separately; keep options stable without center
-    // delete (copy as any).center;
     return copy;
   }, [mapStyleId]);
   const activeDetail = selectedVestules || selectedMarker;
@@ -126,9 +124,21 @@ export const MapView = ({ points, lines }: MapViewProps) => {
                 key={line.id}
                 path={line.coords.map((c) => ({ lat: c.lat, lng: c.lng }))}
                 options={{
-                  strokeColor: '#ff6712',
-                  strokeOpacity: 0.9,
-                  strokeWeight: 4,
+                  strokeOpacity: 0,
+                  strokeWeight: 0,
+                  icons: [
+                    {
+                      icon: {
+                        path: 'M 0,-1 0,1',
+                        strokeOpacity: 1,
+                        strokeWeight: 4,
+                        scale: 5,
+                        strokeColor: '#EE3724',
+                      } as any,
+                      offset: '0',
+                      repeat: '27px',
+                    },
+                  ],
                 }}
               />
             ))}

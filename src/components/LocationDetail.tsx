@@ -62,7 +62,9 @@ export const LocationDetail = ({ point, onBack }: LocationDetailProps) => {
   return (
     <div className={`${styles.className} w-full h-full min-h-0 flex flex-col gap-4 p-5 box-border`}>
       <div className="flex items-center justify-between gap-3">
-        <h2 className="m-0 text-[16px] font-[Roboto] leading-tight">{point.name}</h2>
+        <div className="mx-7">
+          <h2 className="text-[16px] font-[Roboto] leading-tight">{point.name}</h2>
+        </div>
         <button
           onClick={onBack}
           className="border-0 text-current"
@@ -74,7 +76,7 @@ export const LocationDetail = ({ point, onBack }: LocationDetailProps) => {
       {point.description && (
         <div
           ref={descRef}
-          className="font-[Gilroy] m-0 text-[14px] leading-[120%] opacity-95"
+          className="font-[Gilroy] mx-7 text-[14px] leading-[120%] opacity-95"
           dangerouslySetInnerHTML={{ __html: String(point.description).replace(/src=(\"|\')(.*?)(\"|\')/gi, (_, q1, url) => `src=${q1}${resolveMapped(url)}${q1}`) }}
         />
       )}

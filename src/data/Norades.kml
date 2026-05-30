@@ -126,25 +126,6 @@
         <text><![CDATA[<h3>$[name]</h3>]]></text>
       </BalloonStyle>
     </Style>
-    <Style id="line-1267FF-5000-nodesc-highlight">
-      <LineStyle>
-        <color>ffff6712</color>
-        <width>7.5</width>
-      </LineStyle>
-      <BalloonStyle>
-        <text><![CDATA[<h3>$[name]</h3>]]></text>
-      </BalloonStyle>
-    </Style>
-    <StyleMap id="line-1267FF-5000-nodesc">
-      <Pair>
-        <key>normal</key>
-        <styleUrl>#line-1267FF-5000-nodesc-normal</styleUrl>
-      </Pair>
-      <Pair>
-        <key>highlight</key>
-        <styleUrl>#line-1267FF-5000-nodesc-highlight</styleUrl>
-      </Pair>
-    </StyleMap>
     <Folder>
       <name>Fakti</name>
       <Placemark>
@@ -513,80 +494,6 @@ pacelšana
             24.0739,56.94616,0
           </coordinates>
         </LineString>
-      </Placemark>
-      <Placemark>
-        <name>Āgenskalna tirgus</name>
-        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            24.07182,56.9354833,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Nometņu iela 60A, Zemgales priekšpilsēta, Rīga, LV-1002, Latvia</name>
-        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            24.0715156,56.9372566,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Nometņu iela 45</name>
-        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            24.0732517,56.9393443,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Āgenskalna priedes</name>
-        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            24.0638965,56.9448081,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Rīgas Valsts vācu ģimnāzija</name>
-        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            24.063426,56.9464965,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Torņa
-pacelšana
-</name>
-        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            24.0679011,56.9448867,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Baložu iela, Zemgales priekšpilsēta, Rīga, LV-1048, Latvia</name>
-        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            24.0721765,56.9455836,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Valsts Arhīva ēka</name>
-        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            24.0739001,56.9461596,0
-          </coordinates>
-        </Point>
       </Placemark>
     </Folder>
   </Document>

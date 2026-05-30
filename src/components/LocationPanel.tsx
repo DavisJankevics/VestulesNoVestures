@@ -5,7 +5,6 @@ function resolveMapped(src: string) {
   const mapped = imageMap && imageMap[src] ? imageMap[src] : src;
   const base = import.meta.env.BASE_URL || '/';
   if (mapped.startsWith('/')) {
-    // avoid double slashes
     return (base.endsWith('/') ? base.slice(0, -1) : base) + mapped;
   }
   return mapped;
@@ -108,9 +107,9 @@ export const LocationPanel = ({
 
   return (
     <div
-      className="fixed left-0 right-0 bottom-0 w-full max-w-[640px] mx-auto bg-[#F5EDE0] flex flex-col sm:relative sm:max-w-[450px] h-full"
+      className="fixed left-0 right-0 bottom-0 w-full max-w-[640px] mx-auto bg-[#FFF4EF] flex flex-col sm:relative sm:max-w-[450px] h-full"
       style={isNotSmScreen ? {
-        height: `calc(100vh - ${sheetY}px)`,
+        height: `calc(95vh - ${sheetY}px)`,
         transition: isDraggingRef.current ? 'none' : 'height 0.25s ease',
         touchAction: 'none',
       } : { touchAction: 'none' }}

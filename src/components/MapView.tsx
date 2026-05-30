@@ -19,12 +19,12 @@ const containerStyle = {
 };
 
 export const MapView = ({ points, lines }: MapViewProps) => {
+  const isIPhone = navigator.userAgent || '' ? /iPhone|iPad|iPod/i.test(navigator.userAgent) : false;
   const [selectedMarker, setSelectedMarker] = useState<MapPoint | null>(null);
   const [selectedVestules, setSelectedVestules] = useState<{ name: string; description: string; type: string } | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [mapInstance, setMapInstance] = useState<google.maps.Map | null>(null);
-  const [sheetY, setSheetY] = useState(750);
-  const filterTop = Math.max(12, sheetY - 12);
+  const [sheetY, setSheetY] = useState(isIPhone ? 550 : 700);
   const mapCenter = defaultCenter;
   const vestulesData = {
     name: 'Vēstules no vēstures',
@@ -153,6 +153,7 @@ export const MapView = ({ points, lines }: MapViewProps) => {
             onSheetYChange={setSheetY}
             mapInstance={mapInstance}
             smoothPanTo={smoothPanTo}
+            isIPhone={isIPhone}
           />
         </div>
         <LocationTypeFilter
@@ -171,17 +172,17 @@ export const MapView = ({ points, lines }: MapViewProps) => {
           }
            setSelectedMarker(null);
         }}
-        className="absolute top-4 left-4 z-30"
+        className="absolute top-4 left-4 z-30 sm:mt-0 mt-3"
         active={!!selectedVestules}
       />
       <div className="fixed inset-x-0 bottom-0 sm:hidden">
         <LocationTypeFilter
           selectedType={selectedType}
           onTypeFilter={handleTypeFilter}
-          className="fixed left-4 z-30 max-w-[200px]"
+          className="fixed left-4 z-40 max-w-[200px] h-[128px] pb-2"
           style={{
-            top: `${filterTop}px`,
-            transform: 'translateY(-100%)',
+            bottom: `calc(100vh - ${sheetY}px)`,
+            transform: 'none',
           }}
         />
         <LocationPanel
@@ -192,6 +193,7 @@ export const MapView = ({ points, lines }: MapViewProps) => {
           onSheetYChange={setSheetY}
           mapInstance={mapInstance}
           smoothPanTo={smoothPanTo}
+          isIPhone={isIPhone}
         />
       </div>
 

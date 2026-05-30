@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState, type TouchEvent as ReactTouchEvent,} from 'react';
+import { useEffect, useRef, useState, type TouchEvent as ReactTouchEvent } from 'react';
 import kmlImageMap from '../data/kmlImageMap.json';
 const imageMap: Record<string, string> = kmlImageMap as unknown as Record<string, string>;
 function resolveMapped(src: string) {
@@ -20,6 +20,7 @@ interface LocationPanelProps {
   onSheetYChange: (sheetY: number) => void;
   mapInstance?: google.maps.Map | null;
   smoothPanTo?: (map: google.maps.Map, target: google.maps.LatLngLiteral, duration?: number) => void;
+  isIPhone: boolean;
 }
 
 export const LocationPanel = ({
@@ -30,10 +31,11 @@ export const LocationPanel = ({
   onSheetYChange,
   mapInstance,
   smoothPanTo,
+  isIPhone,
 }: LocationPanelProps) => {
   const SNAP_TOP = 350;
-  const SNAP_MID = 600;
-  const SNAP_BOTTOM = 750;
+  const SNAP_MID = 550;
+  const SNAP_BOTTOM = 700;
 
   const isDraggingRef = useRef(false);
   const startYRef = useRef(0);
@@ -49,7 +51,6 @@ export const LocationPanel = ({
     startSheetYRef.current = sheetY;
   };
 
-  // Detect if screen is NOT in sm breakpoint (sm is 640px in Tailwind)
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 639px)');
     setIsNotSmScreen(mediaQuery.matches);
@@ -76,7 +77,7 @@ export const LocationPanel = ({
         Math.max(SNAP_TOP, startSheetYRef.current + delta)
       );
 
-      onSheetYChange(next);
+      onSheetYChange(next - (isIPhone ? 44 : 0));
     };
 
     const onEnd = () => {
@@ -90,7 +91,7 @@ export const LocationPanel = ({
         Math.abs(curr - sheetY) < Math.abs(prev - sheetY) ? curr : prev
       );
 
-      onSheetYChange(closest);
+      onSheetYChange(closest - (isIPhone ? 44 : 0));
     };
 
     el.addEventListener('touchmove', onMove, { passive: false });
@@ -109,7 +110,7 @@ export const LocationPanel = ({
     <div
       className="fixed left-0 right-0 bottom-0 w-full max-w-[640px] mx-auto bg-[#FFF4EF] flex flex-col sm:relative sm:max-w-[450px] h-full"
       style={isNotSmScreen ? {
-        height: `calc(95vh - ${sheetY}px)`,
+        height: `calc(100vh - ${sheetY}px)`,
         transition: isDraggingRef.current ? 'none' : 'height 0.25s ease',
         touchAction: 'none',
       } : { touchAction: 'none' }}
@@ -128,7 +129,7 @@ export const LocationPanel = ({
           WebkitOverflowScrolling: 'touch',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none'
-        }}
+          }}
       >
         {points.map((point) => {
           const isSelected = selectedMarker?.id === point.id;

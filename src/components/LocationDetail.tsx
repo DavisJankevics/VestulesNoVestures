@@ -76,7 +76,7 @@ export const LocationDetail = ({ point, onBack }: LocationDetailProps) => {
       {point.description && (
         <div
           ref={descRef}
-          className="font-[Gilroy] mx-7 text-[14px] leading-[120%] opacity-95"
+          className="font-[Gilroy] mx-7 text-[14px] leading-[120%]"
           dangerouslySetInnerHTML={{ __html: String(point.description).replace(/src=(\"|\')(.*?)(\"|\')/gi, (_, q1, url) => `src=${q1}${resolveMapped(url)}${q1}`) }}
         />
       )}

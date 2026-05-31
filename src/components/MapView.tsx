@@ -200,7 +200,7 @@ export const MapView = ({ points, lines }: MapViewProps) => {
 
       {activeDetail && (
         <div className="fixed inset-0 z-40 flex items-center justify-center px-4 pointer-events-none">
-          <div className="w-full max-w-[480px] h-[80vh] rounded-[28px] overflow-hidden shadow-xl bg-transparent pointer-events-auto">
+          <div className="w-full max-w-[480px] h-[85dvh] rounded-[28px] overflow-hidden shadow-xl bg-transparent pointer-events-auto">
             <LocationDetail
               point={activeDetail}
               onBack={() => {

@@ -61,7 +61,7 @@ export const LocationDetail = ({ point, onBack }: LocationDetailProps) => {
 
   return (
     <div className={`${styles.className} w-full h-full min-h-0 flex flex-col gap-4 p-5 box-border`}>
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex items-center justify-between gap-3 mb-3">
         <div className="mx-7">
           <h2 className="text-[16px] font-[Roboto] leading-tight">{point.name}</h2>
         </div>

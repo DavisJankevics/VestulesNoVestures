@@ -9,6 +9,16 @@ function resolveMapped(src: string) {
   }
   return mapped;
 }
+
+function resolveIcon(src?: string) {
+  if (!src) return '';
+  try {
+    const url = new URL(`../assets/Points/${src}`, import.meta.url).href;
+    return url;
+  } catch (e) {
+    return resolveMapped(src);
+  }
+}
 import type { MapPoint } from '../data/mockDataset';
 import { getMarkerSvgUrl } from '../utils/markerUtils';
 
@@ -150,10 +160,23 @@ export const LocationPanel = ({
               }`}
             >
               <div className="flex items-center gap-3.5 mb-2.5">
-                <img
-                  src={getMarkerSvgUrl(point.type, false)}
-                  className="w-[26px] h-[26px] flex-shrink-0"
-                />
+                {(() => {
+                  const iconSrc = point.customIcon ? resolveIcon(point.customIcon) : getMarkerSvgUrl(point.type, isSelected);
+                  return (
+                    <img
+                      src={iconSrc}
+                      alt={point.name}
+                      className="w-[26px] h-[26px] flex-shrink-0"
+                      onError={(e) => {
+                        const img = e.currentTarget as HTMLImageElement;
+                        if (!img.dataset.tried) {
+                          img.dataset.tried = '1';
+                          img.src = getMarkerSvgUrl(point.type, isSelected);
+                        }
+                      }}
+                    />
+                  );
+                })()}
                 <span className="font-[Roboto] text-[16px] text-[#1a1a1a]">
                   {point.name}
                 </span>

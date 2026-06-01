@@ -24,6 +24,7 @@ export const MapView = ({ points, lines }: MapViewProps) => {
   const [selectedVestules, setSelectedVestules] = useState<{ name: string; description: string; type: string } | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [mapInstance, setMapInstance] = useState<google.maps.Map | null>(null);
+  const [mapZoom, setMapZoom] = useState<number | null>(null);
   const [sheetY, setSheetY] = useState(isIPhone ? 550 : 700);
   const mapCenter = defaultCenter;
   const vestulesData = {
@@ -98,27 +99,67 @@ export const MapView = ({ points, lines }: MapViewProps) => {
             center={mapCenter}
             zoom={15}
             options={mapOptions}
-            onLoad={(map) => setMapInstance(map)}
+            onLoad={(map) => {
+              setMapInstance(map);
+              try {
+                const z = map.getZoom();
+                setMapZoom(typeof z === 'number' ? z : null);
+                map.addListener('zoom_changed', () => {
+                  const nz = map.getZoom();
+                  setMapZoom(typeof nz === 'number' ? nz : null);
+                });
+              } catch (e) {
+                // ignore
+              }
+            }}
           >
-            {filteredPoints.map((point) => {
-              const isSelected = selectedMarker?.id === point.id;
-              return (
-                <Marker
-                  key={point.id}
-                  position={{ lat: point.lat, lng: point.lng }}
-                  onClick={() => {
-                    setSelectedMarker(point);
-                    if (mapInstance) {
-                      smoothPanTo(mapInstance, {
-                        lat: point.lat,
-                        lng: point.lng,
-                      }, 750);
-                    }
-                  }}
-                  icon={getMarkerSvgUrl(point.type, isSelected)}
-                />
-              );
-            })}
+            {(() => {
+              const getMarkerIcon = (point: MapPoint, isSelected: boolean) => {
+                const googleMaps = (window as any).google && (window as any).google.maps;
+                const base = isSelected ? 160 : 120;
+                const minSize = 60;
+                const maxSize = 80;
+                const zoom = mapZoom ?? 15;
+                const scaleFactor = Math.max(1, zoom/15);
+                const size = Math.max(minSize, Math.min(maxSize, Math.round(base * scaleFactor)));
+
+                if (point.customIcon) {
+                  const url = new URL(`../assets/Points/${point.customIcon}`, import.meta.url).href;
+                  if (googleMaps) {
+                    return {
+                      url,
+                      size: new googleMaps.Size(size, size),
+                      scaledSize: new googleMaps.Size(size, size),
+                      origin: new googleMaps.Point(0, 0),
+                      anchor: new googleMaps.Point(Math.round(size / 2), Math.round(size * 2 / 3)),
+                    };
+                  }
+                  return { url };
+                }
+
+                return getMarkerSvgUrl(point.type, isSelected);
+              };
+
+              return filteredPoints.map((point) => {
+                const isSelected = selectedMarker?.id === point.id;
+                return (
+                  <Marker
+                    key={point.id}
+                    position={{ lat: point.lat, lng: point.lng }}
+                    onClick={() => {
+                      setSelectedMarker(point);
+                      if (mapInstance) {
+                        smoothPanTo(mapInstance, {
+                          lat: point.lat,
+                          lng: point.lng,
+                        }, 750);
+                      }
+                    }}
+                    icon={getMarkerIcon(point, isSelected)}
+                  />
+                );
+              });
+            })()}
             {lines && lines.map((line) => (
               <Polyline
                 key={line.id}
@@ -200,7 +241,7 @@ export const MapView = ({ points, lines }: MapViewProps) => {
 
       {activeDetail && (
         <div className="fixed inset-0 z-40 flex items-center justify-center px-4 pointer-events-none">
-          <div className="w-full max-w-[480px] h-[85dvh] rounded-[28px] overflow-hidden shadow-xl bg-transparent pointer-events-auto">
+          <div className="w-full max-w-[480px] h-[80dvh] rounded-[28px] overflow-hidden shadow-xl bg-transparent pointer-events-auto">
             <LocationDetail
               point={activeDetail}
               onBack={() => {

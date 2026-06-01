@@ -7,6 +7,7 @@ export interface MapPoint {
   lng: number;
   description: string;
   type: string;
+  customIcon?: string;
 }
 
 export interface LineFeature {
@@ -68,6 +69,8 @@ function parseKmlPoints(kmlText: string): MapPoint[] {
 
         const name = nameEl && nameEl.textContent ? nameEl.textContent.trim() : `point-${idx}`;
         const description = descEl && descEl.textContent ? descEl.textContent.trim() : '';
+        const customIconEl = pm.getElementsByTagName('customIcon')[0];
+        const customIcon = customIconEl && customIconEl.textContent ? customIconEl.textContent.trim() : undefined;
         const folderName = findAncestorFolderName(pm.parentElement);
         const type = folderName ?? '';
 
@@ -78,6 +81,7 @@ function parseKmlPoints(kmlText: string): MapPoint[] {
           lng: coord.lng,
           description,
           type,
+          customIcon,
         });
       } else if (lineEl) {
         const coords = lineEl.getElementsByTagName('coordinates')[0];

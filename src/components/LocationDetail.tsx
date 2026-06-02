@@ -60,10 +60,10 @@ export const LocationDetail = ({ point, onBack }: LocationDetailProps) => {
   }, [point.description]);
 
   return (
-    <div className={`${styles.className} w-full h-full min-h-0 flex flex-col gap-4 p-5 box-border !text-white`}>
+    <div className={`${styles.className} w-full h-full min-h-0 flex flex-col gap-4 p-5 box-border`}>
       <div className="flex items-center justify-between gap-3 mb-3">
         <div className="mx-7">
-          <h2 className="text-[18px] !font-[Roboto] leading-tight">{point.name}</h2>
+          <h2 className="text-[18px] !font-[Roboto] leading-tight !text-white">{point.name}</h2>
         </div>
         <button
           onClick={onBack}
@@ -76,7 +76,7 @@ export const LocationDetail = ({ point, onBack }: LocationDetailProps) => {
       {point.description && (
         <div
           ref={descRef}
-          className="!font-[Gilroy] mx-7 text-[15px] leading-[120%] overflow-y-auto"
+          className="!font-[Gilroy] mx-7 text-[15px] leading-[120%] overflow-y-auto !text-white"
           style={{ 
             WebkitOverflowScrolling: 'touch',
             scrollbarWidth: 'none',

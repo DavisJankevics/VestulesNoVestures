@@ -52,20 +52,3 @@ body.panel-open {
 .overflow-y-auto::-webkit-scrollbar {
   display: none;
 }
-
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('/Fonts/Gilroy-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Roboto';
-  src: url('/Fonts/RobotoMono-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-

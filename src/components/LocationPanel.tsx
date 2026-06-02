@@ -177,7 +177,7 @@ export const LocationPanel = ({
                     />
                   );
                 })()}
-                <span className="!font-[Roboto] text-[16px] text-[#1a1a1a]">
+                <span className="!font-roboto text-[16px] text-[#1a1a1a]">
                   {point.name}
                 </span>
               </div>
@@ -214,12 +214,12 @@ export const LocationPanel = ({
                           }}
                         />
                       )}
-                      <div className="!font-[Gilroy] text-[14px] text-[#444] leading-[120%]">{snippet}</div>
+                      <div className="!font-gilroy text-[14px] text-[#444] leading-[120%]">{snippet}</div>
                     </div>
                   );
                 })()
               ) : (
-                <div className="pl-10 !font-[Gilroy] text-[14px] text-[#444] leading-[120%]">
+                <div className="pl-10 !font-gilroy text-[14px] text-[#444] leading-[120%]">
                   {(() => {
                     const textOnly = String(point.description || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
                     return textOnly.length > 100 ? textOnly.slice(0, 100).replace(/\s+\S*$/, '') + '...' : textOnly;

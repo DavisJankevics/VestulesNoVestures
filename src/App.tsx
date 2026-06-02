@@ -24,6 +24,7 @@ function App() {
       onLoad={() => setIsLoaded(true)}
       onError={(e) => setLoadError(String(e))}
       libraries={['maps']}
+      preventGoogleFontsLoading={true}
     >
       {!isLoaded && (
         <div className="w-full h-screen flex items-center justify-center">

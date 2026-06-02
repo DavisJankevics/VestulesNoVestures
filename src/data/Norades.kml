@@ -211,21 +211,6 @@
         </Point>
       </Placemark>
       <Placemark>
-        <name>Tramvaja ceļš</name>
-        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_Gxvfmm3MsocDsvbrNapy8pTzVVhXE5PK1dMiDDVH82ijJQT1NwQF1gvXznaGrAetWcX04kNRI8-g3YoBcuHEBv-gjiCweQBn_jxv_JExf0MtCqIcXbORyCjZnKHDytw_XSq6Bnva3ZyRt0t2UZ_yGeJ4Z4nXi41tqqdTcN25diIXxt8AvXi3IFcp12SV9cryc4qnauIn-fqXwdNh53IfNU3njCXgRUcUD-X7XvwrYzTRHLW2sQK-ZehCYQ?authuser=0&fife=s16383" height="200" width="auto" style="background-color: #FFF4EF;" /><br><br>Šodien te pietur daudzi, bet 1898. gadā, kad atvēra Āgenskalna tirgu, sabiedrisko nācās gaidīt vēl 7 gadus.<br><br>8. tramvajs ne vien brauca uz tirgu, bet pat izbrauca tam cauri, jo jaunizveidotā Bāriņu iela nošķēla tirgus placim nelielu gabaliņu un kādu laiku tirgošanās notika abpus sliedēm. ]]></description>
-        <styleUrl>#icon-ci-1</styleUrl>
-        <ExtendedData>
-          <Data name="gx_media_links">
-            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_Gxvfmm3MsocDsvbrNapy8pTzVVhXE5PK1dMiDDVH82ijJQT1NwQF1gvXznaGrAetWcX04kNRI8-g3YoBcuHEBv-gjiCweQBn_jxv_JExf0MtCqIcXbORyCjZnKHDytw_XSq6Bnva3ZyRt0t2UZ_yGeJ4Z4nXi41tqqdTcN25diIXxt8AvXi3IFcp12SV9cryc4qnauIn-fqXwdNh53IfNU3njCXgRUcUD-X7XvwrYzTRHLW2sQK-ZehCYQ?authuser=0&fife=s16383]]></value>
-          </Data>
-        </ExtendedData>
-        <Point>
-          <coordinates>
-            24.0708972,56.935596,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
         <name>Tirgus poētika</name>
         <description><![CDATA[Vai zināji, ka Āgenskalna tirgus bija svarīgs pieturas punkts dzejnieka Ojāra Vācieša iemīļotajā pastaigu lokā?<br><br>Autoram esot bijusi īstena<br>kaislība uz iepirkšanos tirgū, paticis ieklausīties cilvēku valodās, iejukt tirgus burzmā un kņadā. <br><br>***<br><br>Par puķu cenām tantes purpina,<br>viens aliņu caur zobiem kāš,<br>un veikaliņā, kur dod kurpes,<br>ir ieradies bass pestītāš.<br><br>Tam vajag ceriņkrāsas kedas<br>no īstas ceriņkoka liests,<br>lai pudeļstikli kājās neduras,<br>kad viņš uz paradīzi ies.<br><br>Nav kedu. Viņš to krupi norīs<br>un skābā gurķī kodīs jauks,<br>bet apkārt glauni tranzistori<br>visviens uz paradīzi sauks.<br><br>Ir paradīziski ap sirdi,<br>jo rīts ir paradīzes vērts.<br>Tu nezin kāpēc nopērc mirti<br>un marinētas sēnes pērc,<br><br>un mājas ābolvīna pudeli<br>tu vari kāpostlapā tīt.<br>Un ved tev pretī melnu pūdeli –<br>vai atrunāt, vai nobaidīt?<br><br>Un pats kā pūdelis tu stāvi,<br>un te vairs māņi maz ko līdz,<br>jo precēt labu garastāvokli<br>ved tevi Āgenskalna rīts.]]></description>
         <styleUrl>#icon-ci-1</styleUrl>
@@ -266,75 +251,7 @@ pacelšana
       </Placemark>
     </Folder>
     <Folder>
-      <name>Kultūra</name>
-      <Placemark>
-        <name>Āgenskalna tirgus rīts</name>
-        <description><![CDATA[Par puķu cenām tantes purpina,<br>viens aliņu caur zobiem kāš,<br>un veikaliņā, kur dod kurpes,<br>ir ieradies bass pestītāš.<br><br>Tam vajag ceriņkrāsas kedas<br>no īstas ceriņkoka liests,<br>lai pudeļstikli kājās neduras,<br>kad viņš uz paradīzi ies.<br><br>Nav kedu. Viņš to krupi norīs<br>un skābā gurķī kodīs jauks,<br>bet apkārt glauni tranzistori<br>visviens uz paradīzi sauks.<br><br>Ir paradīziski ap sirdi,<br>jo rīts ir paradīzes vērts.<br>Tu nezin kāpēc nopērc mirti<br>un marinētas sēnes pērc,<br><br>un mājas ābolvīna pudeli<br>tu vari kāpostlapā tīt.<br>Un ved tev pretī melnu pūdeli –<br>vai atrunāt, vai nobaidīt?<br><br>Un pats kā pūdelis tu stāvi,<br>un te vairs māņi maz ko līdz,<br>jo precēt labu garastāvokli<br>ved tevi Āgenskalna rīts.<br><br>***<br><br>Vai zināji, ka Āgenskalna tirgus bija svarīgs pieturas punkts dzejnieka Ojāra Vācieša iemīļotajā pastaigu lokā?<br><br>Autoram esot bijusi īstena<br>kaislība uz iepirkšanos tirgū, paticis ieklausīties cilvēku valodās, iejukt tirgus burzmā un kņadā. ]]></description>
-        <styleUrl>#icon-ci-2</styleUrl>
-        <Point>
-          <coordinates>
-            24.0726547,56.9358081,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Tornis Rec.</name>
-        <description><![CDATA[Ūdenstornī 20 gadus mājoja alternatīvās mūzikas kopiena 1991. gada pavasarī torņa atslēgas nonāca pie indī rok grupas Ir bijuši mati un izbijuši, kas šeit ierīkoja mēģinājuma telpas. Drīz vien te sāka pulcēties un ierakstīties arī citas alternatīvās mūzikas grupas, tostarp mūsdienu leģendas Baložu pilni pagalmi, Kartāga, Bērnības milicija u.c.<br><br>***<br><br>Arhitekta V. Bokslafa projektētais 1911. gadā uzceltais ūdenstornis sākotnēji bija krietni zemāks nekā šodien. Pagājušā gadsimta 30. gados, kad apkārtējā apbūve kļuva augstāka, tornis vairs nespēja apgādāt jauno ēku augšējos stāvus ar ūdeni.<br><br>***<br><br>1939. gadā tika veikta neparasta un drosmīga inženiertehniskā operācija. Zem torņa galvas mūrī izkala speciālas iedobes un tajās ievietoja domkratus. Nepārtraucot ūdensapgādi pilsētai, torņa augšdaļu pacēla par 7,5 metriem, vienlaikus turpinot mūrēt torņa sienas.]]></description>
-        <styleUrl>#icon-ci-2</styleUrl>
-        <Point>
-          <coordinates>
-            24.067903,56.944889,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Vecais tramvaja ceļš</name>
-        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GwHWA6PjGx5sQg57OLKXl7-jt1L4x31VYsQcruTdH_7e8HhsEcro7BNxQweCy91NGd1WLuJPcG-nuR40-G6xCP1NQan3mvCfAqHcaloW-ewF8qEL7Px7_OxbvcFFR9zLd7Y0WtE6jboYJM-38LOvCs1v9HeL_XHWjJk5E-mIclozhStnmyZfNPmDDbUWUclSn3zo3193gITqugKgNddoXcMUHYwPaBgeskwdR-9ai74iMibeozcdI8djbE?authuser=0&fife=s16383" height="200" width="auto"/><br><br>Nometņu un Lapu ielas krustojums (pirms 1914)]]></description>
-        <styleUrl>#icon-ci-2</styleUrl>
-        <ExtendedData>
-          <Data name="gx_media_links">
-            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GwHWA6PjGx5sQg57OLKXl7-jt1L4x31VYsQcruTdH_7e8HhsEcro7BNxQweCy91NGd1WLuJPcG-nuR40-G6xCP1NQan3mvCfAqHcaloW-ewF8qEL7Px7_OxbvcFFR9zLd7Y0WtE6jboYJM-38LOvCs1v9HeL_XHWjJk5E-mIclozhStnmyZfNPmDDbUWUclSn3zo3193gITqugKgNddoXcMUHYwPaBgeskwdR-9ai74iMibeozcdI8djbE?authuser=0&fife=s16383]]></value>
-          </Data>
-        </ExtendedData>
-        <Point>
-          <coordinates>
-            24.0726947,56.9387717,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Vecais tramvaja ceļš</name>
-        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_Gw1vdQBlbvFUyQYSRyCr12jKNr3vAlAUfbXfnOla5vEDyii1gu4f59Kv1SDAJ8mPCsIsOUqkDJCN9XTjeXd0balFToKEgUyrdqW7-RCJ47UevmYHSqJpjjaTyyzpL0mNcsqxwQ94NnHBRFSHWzwJZEAGax-kyTG4OgVt1AcEzOrkfqM3szveDVhn4hHwTVbwz_IvRHzSsPflWvxx05Nq9Dj9w8yswjCKB6HKfWPm773Q56q15kvVqjHjUk?authuser=0&fife=s16383" height="200" width="auto" /><br><br>Nometņu iela (1906-1915)]]></description>
-        <styleUrl>#icon-ci-2</styleUrl>
-        <ExtendedData>
-          <Data name="gx_media_links">
-            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_Gw1vdQBlbvFUyQYSRyCr12jKNr3vAlAUfbXfnOla5vEDyii1gu4f59Kv1SDAJ8mPCsIsOUqkDJCN9XTjeXd0balFToKEgUyrdqW7-RCJ47UevmYHSqJpjjaTyyzpL0mNcsqxwQ94NnHBRFSHWzwJZEAGax-kyTG4OgVt1AcEzOrkfqM3szveDVhn4hHwTVbwz_IvRHzSsPflWvxx05Nq9Dj9w8yswjCKB6HKfWPm773Q56q15kvVqjHjUk?authuser=0&fife=s16383]]></value>
-          </Data>
-        </ExtendedData>
-        <Point>
-          <coordinates>
-            24.0710432,56.9367658,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Vecais tramvaja ceļš</name>
-        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GxmUm4k2k_be4H1-vtYCF-xtec3wRgwLyRg7fTrOmekEnAnO8psNQHEeNC8WRsMbJ0JT3V6d-bH6n2UV2LFZRceqKPlEFkvlFNzYVW6SdxgiW6ZhRSdbDI1ih0EbT4mLTzM3pYSS3cMbcp3u2LUOIKmdl_2Mbtt6D1lGR4dJTfwTBCljZiTyRB61eoQ8aR-hMdZH_AZjFRPQsKQXdP81DxM00hrtEhEh_8n-J9SOTQ38QyfeQZhJhlWqo8?authuser=0&fife=s16383" height="200" width="auto" /><br><br>20. gs. sākumā tramvaja līnija ieskāva tirgu no divām pusēm. <br><br>Pagriežoties no Bāriņu uz Nometņu ielu, tā veda gar koka kiosku rindām, ko tolaik dēvēja par palieveņiem.<br><br>Pagrieziens no Nometņu uz Bāriņu ielu (1909)]]></description>
-        <styleUrl>#icon-ci-2</styleUrl>
-        <ExtendedData>
-          <Data name="gx_media_links">
-            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GxmUm4k2k_be4H1-vtYCF-xtec3wRgwLyRg7fTrOmekEnAnO8psNQHEeNC8WRsMbJ0JT3V6d-bH6n2UV2LFZRceqKPlEFkvlFNzYVW6SdxgiW6ZhRSdbDI1ih0EbT4mLTzM3pYSS3cMbcp3u2LUOIKmdl_2Mbtt6D1lGR4dJTfwTBCljZiTyRB61eoQ8aR-hMdZH_AZjFRPQsKQXdP81DxM00hrtEhEh_8n-J9SOTQ38QyfeQZhJhlWqo8?authuser=0&fife=s16383]]></value>
-          </Data>
-        </ExtendedData>
-        <Point>
-          <coordinates>
-            24.0708445,56.9358873,0
-          </coordinates>
-        </Point>
-      </Placemark>
-    </Folder>
-    <Folder>
-      <name>Cilvēkstāsti</name>
+      <name>Fakti</name>
       <Placemark>
         <name>Āgenskalna tirgus</name>
         <description><![CDATA[ir apkaimes sirds jau vairāk nekā 100 gadu, taču 19. gs. beigās šī vieta bija tuksnesīga nomale.<br>Tirgotāji te sāka rosību 1898. gadā, taču savu lepnumu - R. Šmēlinga projektēto paviljonu (1925) - apkaime iemantoja tikai pēc kara.]]></description>
@@ -369,16 +286,6 @@ pacelšana
         </Point>
       </Placemark>
       <Placemark>
-        <name>Rīgas Valsts vācu ģimnāzija</name>
-        <description>(1931) var lepoties ne vien ar izciliem absolventiem, bet arī iespaidīgu liepu dzīvžogu, strūklaku un jauku rotaļu laukumiņu pagalmā. Starp citu, mazie vārtiņi vienmēr ir vaļā!</description>
-        <styleUrl>#icon-1899-0288D1</styleUrl>
-        <Point>
-          <coordinates>
-            24.0631385,56.9466753,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
         <name>Smiļģa māja</name>
         <description>kur mīt Teātra muzejs, pārsteidz ar neparastiem stāstiem un interjeru! Būdams inženieris, E. Smiļģis pats piedalījies nama projektēšanā. Arī pagalms ir kā eksotiska oāze ar strūklaku un iespaidīgām I.Blumberga dekorācijām operai Burvju flauta.</description>
         <styleUrl>#icon-1899-0288D1</styleUrl>
@@ -386,16 +293,6 @@ pacelšana
         <Point>
           <coordinates>
             24.075554,56.937487,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Apbūves fragments</name>
-        <description><![CDATA[ar seno ielu tīklojumu, iekšdārziem un gleznainiem namiņiem ir unikāla vērtība, kas saglabājusies no 18.-19. gs. Senās ieliņas ir tik līkumotas, lai apietu kāpas un zirgam vezums nebūtu jāvelk kalnā.<br><br>/Starp Nometņu, Talsu, E.Smiļģa un<br>Meža ielu/]]></description>
-        <styleUrl>#icon-1899-0288D1</styleUrl>
-        <Point>
-          <coordinates>
-            24.0773052,56.9409838,0
           </coordinates>
         </Point>
       </Placemark>
@@ -486,7 +383,95 @@ pacelšana
       </Placemark>
     </Folder>
     <Folder>
+      <name>Kultūra</name>
+      <Placemark>
+        <name>Āgenskalna tirgus rīts</name>
+        <description><![CDATA[Par puķu cenām tantes purpina,<br>viens aliņu caur zobiem kāš,<br>un veikaliņā, kur dod kurpes,<br>ir ieradies bass pestītāš.<br><br>Tam vajag ceriņkrāsas kedas<br>no īstas ceriņkoka liests,<br>lai pudeļstikli kājās neduras,<br>kad viņš uz paradīzi ies.<br><br>Nav kedu. Viņš to krupi norīs<br>un skābā gurķī kodīs jauks,<br>bet apkārt glauni tranzistori<br>visviens uz paradīzi sauks.<br><br>Ir paradīziski ap sirdi,<br>jo rīts ir paradīzes vērts.<br>Tu nezin kāpēc nopērc mirti<br>un marinētas sēnes pērc,<br><br>un mājas ābolvīna pudeli<br>tu vari kāpostlapā tīt.<br>Un ved tev pretī melnu pūdeli –<br>vai atrunāt, vai nobaidīt?<br><br>Un pats kā pūdelis tu stāvi,<br>un te vairs māņi maz ko līdz,<br>jo precēt labu garastāvokli<br>ved tevi Āgenskalna rīts.<br><br>***<br><br>Vai zināji, ka Āgenskalna tirgus bija svarīgs pieturas punkts dzejnieka Ojāra Vācieša iemīļotajā pastaigu lokā?<br><br>Autoram esot bijusi īstena<br>kaislība uz iepirkšanos tirgū, paticis ieklausīties cilvēku valodās, iejukt tirgus burzmā un kņadā. ]]></description>
+        <styleUrl>#icon-ci-2</styleUrl>
+        <Point>
+          <coordinates>
+            24.0726547,56.9358081,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tornis Rec.</name>
+        <description><![CDATA[Ūdenstornī 20 gadus mājoja alternatīvās mūzikas kopiena 1991. gada pavasarī torņa atslēgas nonāca pie indī rok grupas Ir bijuši mati un izbijuši, kas šeit ierīkoja mēģinājuma telpas. Drīz vien te sāka pulcēties un ierakstīties arī citas alternatīvās mūzikas grupas, tostarp mūsdienu leģendas Baložu pilni pagalmi, Kartāga, Bērnības milicija u.c.<br><br>***<br><br>Arhitekta V. Bokslafa projektētais 1911. gadā uzceltais ūdenstornis sākotnēji bija krietni zemāks nekā šodien. Pagājušā gadsimta 30. gados, kad apkārtējā apbūve kļuva augstāka, tornis vairs nespēja apgādāt jauno ēku augšējos stāvus ar ūdeni.<br><br>***<br><br>1939. gadā tika veikta neparasta un drosmīga inženiertehniskā operācija. Zem torņa galvas mūrī izkala speciālas iedobes un tajās ievietoja domkratus. Nepārtraucot ūdensapgādi pilsētai, torņa augšdaļu pacēla par 7,5 metriem, vienlaikus turpinot mūrēt torņa sienas.]]></description>
+        <styleUrl>#icon-ci-2</styleUrl>
+        <Point>
+          <coordinates>
+            24.067903,56.944889,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vecais tramvaja ceļš</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GwHWA6PjGx5sQg57OLKXl7-jt1L4x31VYsQcruTdH_7e8HhsEcro7BNxQweCy91NGd1WLuJPcG-nuR40-G6xCP1NQan3mvCfAqHcaloW-ewF8qEL7Px7_OxbvcFFR9zLd7Y0WtE6jboYJM-38LOvCs1v9HeL_XHWjJk5E-mIclozhStnmyZfNPmDDbUWUclSn3zo3193gITqugKgNddoXcMUHYwPaBgeskwdR-9ai74iMibeozcdI8djbE?authuser=0&fife=s16383" height="200" width="auto"/><br><br>Nometņu un Lapu ielas krustojums (pirms 1914)]]></description>
+        <styleUrl>#icon-ci-2</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GwHWA6PjGx5sQg57OLKXl7-jt1L4x31VYsQcruTdH_7e8HhsEcro7BNxQweCy91NGd1WLuJPcG-nuR40-G6xCP1NQan3mvCfAqHcaloW-ewF8qEL7Px7_OxbvcFFR9zLd7Y0WtE6jboYJM-38LOvCs1v9HeL_XHWjJk5E-mIclozhStnmyZfNPmDDbUWUclSn3zo3193gITqugKgNddoXcMUHYwPaBgeskwdR-9ai74iMibeozcdI8djbE?authuser=0&fife=s16383]]></value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            24.0726947,56.9387717,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vecais tramvaja ceļš</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_Gw1vdQBlbvFUyQYSRyCr12jKNr3vAlAUfbXfnOla5vEDyii1gu4f59Kv1SDAJ8mPCsIsOUqkDJCN9XTjeXd0balFToKEgUyrdqW7-RCJ47UevmYHSqJpjjaTyyzpL0mNcsqxwQ94NnHBRFSHWzwJZEAGax-kyTG4OgVt1AcEzOrkfqM3szveDVhn4hHwTVbwz_IvRHzSsPflWvxx05Nq9Dj9w8yswjCKB6HKfWPm773Q56q15kvVqjHjUk?authuser=0&fife=s16383" height="200" width="auto" /><br><br>Nometņu iela (1906-1915)]]></description>
+        <styleUrl>#icon-ci-2</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_Gw1vdQBlbvFUyQYSRyCr12jKNr3vAlAUfbXfnOla5vEDyii1gu4f59Kv1SDAJ8mPCsIsOUqkDJCN9XTjeXd0balFToKEgUyrdqW7-RCJ47UevmYHSqJpjjaTyyzpL0mNcsqxwQ94NnHBRFSHWzwJZEAGax-kyTG4OgVt1AcEzOrkfqM3szveDVhn4hHwTVbwz_IvRHzSsPflWvxx05Nq9Dj9w8yswjCKB6HKfWPm773Q56q15kvVqjHjUk?authuser=0&fife=s16383]]></value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            24.0710432,56.9367658,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vecais tramvaja ceļš</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GxmUm4k2k_be4H1-vtYCF-xtec3wRgwLyRg7fTrOmekEnAnO8psNQHEeNC8WRsMbJ0JT3V6d-bH6n2UV2LFZRceqKPlEFkvlFNzYVW6SdxgiW6ZhRSdbDI1ih0EbT4mLTzM3pYSS3cMbcp3u2LUOIKmdl_2Mbtt6D1lGR4dJTfwTBCljZiTyRB61eoQ8aR-hMdZH_AZjFRPQsKQXdP81DxM00hrtEhEh_8n-J9SOTQ38QyfeQZhJhlWqo8?authuser=0&fife=s16383" height="200" width="auto" /><br><br>20. gs. sākumā tramvaja līnija ieskāva tirgu no divām pusēm. <br><br>Pagriežoties no Bāriņu uz Nometņu ielu, tā veda gar koka kiosku rindām, ko tolaik dēvēja par palieveņiem.<br><br>Pagrieziens no Nometņu uz Bāriņu ielu (1909)]]></description>
+        <styleUrl>#icon-ci-2</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GxmUm4k2k_be4H1-vtYCF-xtec3wRgwLyRg7fTrOmekEnAnO8psNQHEeNC8WRsMbJ0JT3V6d-bH6n2UV2LFZRceqKPlEFkvlFNzYVW6SdxgiW6ZhRSdbDI1ih0EbT4mLTzM3pYSS3cMbcp3u2LUOIKmdl_2Mbtt6D1lGR4dJTfwTBCljZiTyRB61eoQ8aR-hMdZH_AZjFRPQsKQXdP81DxM00hrtEhEh_8n-J9SOTQ38QyfeQZhJhlWqo8?authuser=0&fife=s16383]]></value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            24.0708445,56.9358873,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
       <name>Cilvēkstāsti</name>
+      <Placemark>
+        <name>Rīgas Valsts vācu ģimnāzija</name>
+        <description>(1931) var lepoties ne vien ar izciliem absolventiem, bet arī iespaidīgu liepu dzīvžogu, strūklaku un jauku rotaļu laukumiņu pagalmā. Starp citu, mazie vārtiņi vienmēr ir vaļā!</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            24.0631385,56.9466753,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Apbūves fragments</name>
+        <description><![CDATA[ar seno ielu tīklojumu, iekšdārziem un gleznainiem namiņiem ir unikāla vērtība, kas saglabājusies no 18.-19. gs. Senās ieliņas ir tik līkumotas, lai apietu kāpas un zirgam vezums nebūtu jāvelk kalnā.<br><br>/Starp Nometņu, Talsu, E.Smiļģa un<br>Meža ielu/]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            24.0773052,56.9409838,0
+          </coordinates>
+        </Point>
+      </Placemark>
       <Placemark>
         <name>Kino leģenda pārdevēja lomā</name>
         <description><![CDATA[Spilgtākā atmiņa kā apmeklētājai ir bulciņu pirkšana pie latviešu kinoleģendas Ulda Pūcīša. It kā vienkārša sadzīves aina pārdevēja un pircējas lomās, bet katru reizi bija jāatceras viņa kino lomas gan “Vajadzīga soliste”, gan “Purva bridējs”. Arī kā pārdevējs Uldis Pūcītis stāvēja staltu, varētu teikt cēlu stāju, izstarodams mieru un harmoniju. Vēl tagad atceros viņa lielās plaukstas, kuras rūpīgi iesaiņoja pirkumus, un viņa slaveno, atpazīstamo aktiera balsi. <br><br>_Dace]]></description>

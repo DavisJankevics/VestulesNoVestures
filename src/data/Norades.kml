@@ -350,6 +350,7 @@ pacelšana
         <name>Āgenskalna TV tornis</name>
         <description>Iespaidīgais, 110 m augstais TV tornis šurp ir atvests no tālās Kaspijas jūras, jo oriģināli paredzēts naftas urbšanai. Kad notika TV centra pirmā pārraide (06.11.1954.), visā Rīgā esot bijuši vien 20 televizori!</description>
         <styleUrl>#icon-1899-0288D1</styleUrl>
+        <customIcon>TV_tornis.svg</customIcon>
         <Point>
           <coordinates>
             24.07239,56.9368977,0
@@ -402,6 +403,7 @@ pacelšana
         <name>Pečaka nams</name>
         <description>K.Pēkšēna projektētais Pečaka nams (1903) ir viens no interesantākajiem gotiskā eklektisma paraugiem Rīgā. Starp citu, te mājo ļoti jaukas kafejnīcas.</description>
         <styleUrl>#icon-1899-0288D1</styleUrl>
+        <customIcon>Pecaka_nams.svg</customIcon>
         <Point>
           <coordinates>
             24.08001,56.9439933,0
